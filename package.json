@@ -4,7 +4,10 @@
   "description": "https://nodejs.org/en/ v7.10.0",
   "main": "index.js",
   "scripts": {
-    "start": "serve ./"
+    "css": "node-sass styles/style.scss -o css --output-style compressed",
+    "css:watch": "npm run css && node-sass styles/style.scss -wo css --output-style compressed",
+    "serve": "serve ./",
+    "start": "concurrently --kill-others \"npm run css:watch\" \"npm run serve\""
   },
   "repository": {
     "type": "git",
@@ -17,7 +20,12 @@
     "url": "https://github.com/brittverschueren/zoeff/issues"
   },
   "homepage": "https://github.com/brittverschueren/zoeff#readme",
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6"
+  },
   "devDependencies": {
-    "serve": "5.1.5"
+    "serve": "5.1.5",
+    "node-sass": "4.5.3",
+    "concurrently": "3.4.0"
   }
 }

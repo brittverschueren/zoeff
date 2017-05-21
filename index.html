@@ -1,5 +1,7 @@
 <html>
-
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
     <div id="app">
         <ol>
@@ -9,7 +11,7 @@
             </li>
         </ol>
 
-        <button v-on:click="toggleStrip">Add strip</button>
+        <button class="btn btn-danger" v-on:click="toggleStrip">Add strip</button>
         <ol v-if="add">
             <li v-for="strip in allStrips">
                 <img v-bind:alt="strip.name" v-bind:src="'images/'+ strip.image" v-on:click="addStrip(strip)">

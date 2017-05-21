@@ -9,3 +9,6 @@ https://nodejs.org/en/ v7.10.0
 `git remote add origin https://github.com/brittverschueren/zoeff.git`  
 `npm init -y // node project opzetten`  
 `npm install --save-dev serve //npm i -D serve`  
+`npm install --save-dev concurrently node-sass`  
+`npm install --save bootstrap@next`  
+
