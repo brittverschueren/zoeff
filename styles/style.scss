@@ -1,2 +1,37 @@
 @import "bootstrap.override.scss";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+$a :160px;
+
+@mixin fixed-size($width, $height) {
+  min-width: $width;
+  width: $width;
+  max-width: $width;
+  min-height: $height;
+  height: $height;
+  max-height: $height;
+}
+
+.strip-items{
+    >.strip-item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        &.landscape{
+            @media only screen and (max-width: 500px) {
+                @include fixed-size($a*2,$a);
+            }
+            @include fixed-size($a*4,$a*2);
+        }
+        &.portrait{
+            @media only screen and (max-width: 500px) {
+                @include fixed-size($a,$a);
+            }
+            @include fixed-size($a*2,$a*2);
+        }
+        img{
+            height: 100%;
+        }
+    }
+}

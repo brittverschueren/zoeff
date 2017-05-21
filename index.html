@@ -2,21 +2,31 @@
 
 <head>
     <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
     <div id="app">
-        <div>
-            <strip-items v-bind:strips="userStrips" v-bind:click="deleteStrip"></strip-items>
-        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>Mijn strips</h1>
+                            <button class="btn btn-danger float-right" v-on:click="toggleStrip" v-bind:disabled="userStrips.length>=5">Add strip</button>
+                        </div>
+                    </div>
+                    <strip-items v-bind:strips="userStrips" v-bind:click="deleteStrip"></strip-items>
+                </div>
 
-        <button class="btn btn-danger" v-on:click="toggleStrip">Add strip</button>
-        <div v-if="add">
-            <strip-items v-bind:strips="allStrips" v-bind:click="addStrip"></strip-items>
+                <div v-if="add" class="col-12 col-md-3 push-md-3">
+                    <h1>Strips toevoegen</h1>
+                    <strip-items v-bind:strips="allStrips" v-bind:click="addStrip"></strip-items>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
 

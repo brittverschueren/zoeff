@@ -29,6 +29,7 @@ var zoeff = zoeff || {};
                 this.add = !this.add;
             },
             addStrip: function (strip) {
+                if (app.userStrips.length >= 5) return;
                 var index = app.allStrips.indexOf(strip);
                 app.userStrips.push(app.allStrips[index]);
                 this.allStrips = updateAllStrips(app.allStrips, this.userStrips);
@@ -36,6 +37,6 @@ var zoeff = zoeff || {};
                 this.add = false;
             }
         }
-    });    
+    });
 })(zoeff);
 
