@@ -1,23 +1,30 @@
 <html>
+
 <head>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div id="app">
         <ol>
-            <li v-for="strip in userStrips">
+            <strip-items v-bind:strips="userStrips"></strip-items>
+            <!--<li v-for="strip in userStrips">
                 <span>{{strip.name}}</span>
                 <span v-on:click="deleteStrip(strip)">X</span>
-            </li>
+            </li>-->
         </ol>
 
         <button class="btn btn-danger" v-on:click="toggleStrip">Add strip</button>
-        <ol v-if="add">
-            <li v-for="strip in allStrips">
-                <img v-bind:alt="strip.name" v-bind:src="'images/'+ strip.image" v-on:click="addStrip(strip)">
-            </li>
-        </ol>
+        <div v-if="add">
+            <strip-items v-bind:strips="allStrips"></strip-items>
+        </div>
     </div>
+
+    <!--<div id="strip-items">
+        <div v-for="strip in allStrips">
+            <img v-bind:alt="strip.name" v-bind:src="'images/'+ strip.image" v-on:click="addStrip(strip)">
+        </div>
+    </div>-->
 
     <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
     <script src="https://unpkg.com/vue"></script>

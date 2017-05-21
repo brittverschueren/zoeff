@@ -37,5 +37,16 @@ var zoeff = zoeff || {};
             }
         }
     });
+
+    Vue.component('stripItems',{
+        props:['strips'],
+        template: `
+            <div>
+                <div v-for="strip in strips">
+                    <img v-bind:alt="strip.name" v-bind:src="'images/'+ strip.image" v-on:click="addStrip(strip)">
+                </div>
+            </div>
+        `
+    })
 })(zoeff);
 
