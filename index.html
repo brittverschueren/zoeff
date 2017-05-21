@@ -1,49 +1,108 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BP Website</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Bangers|Raleway" rel="stylesheet">
+	<meta charset="utf-8">
 </head>
 
 <body>
-    <div id="app">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="row">
-                        <div class="col-12">
-                            <h1>Mijn strips</h1>
-                            <button class="btn btn-danger float-right" v-on:click="toggleStrip" v-bind:disabled="userStrips.length>=5">Add strip</button>
-                        </div>
-                    </div>
-                    <strip-items v-bind:strips="userStrips" v-bind:click="deleteStrip"></strip-items>
-                </div>
+	<div class="navigatie">
+		<div class="logo"> </div>
+		<nav>
+			<a href="#"> Home </a>
+			<a href="#"> Over ons </a>
+			<a href="#"> Box op maat </a>
+			<a href="#"> Ruilen </a>
+			<a href="app">Stripmuur</a>
+		</nav>
+	</div>
+	<div class="header">
+		<img src="images/header.png">
+	</div>
 
-                <div v-if="add" class="col-12 col-md-3 push-md-3">
-                    <h1>Strips toevoegen</h1>
-                    <strip-items v-bind:strips="allStrips" v-bind:click="addStrip"></strip-items>
-                </div>
-            </div>
-        </div>
-    </div>
+	<!-- Blok 1 -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 no-padding">
+				<div class="about-img"></div>
+			</div>
+			<div id="about" class="col-md-6 no-padding">
 
-    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
-    <script src="https://unpkg.com/vue"></script>
-    <script src="vendor/vex.combined.min.js"></script>
-    <script>vex.defaultOptions.className = 'vex-theme-default'</script>
+				<div class="about-content white">
+					<h1> Over ons </h1>
+					<p class="about-p"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis volutpat lorem, eget tempor ligula. Nulla eu
+						consectetur felis. Curabitur pulvinar egestas eros, id congue turpis. Etiam at erat facilisis, semper diam vitae, rhoncus
+						eros </p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Blok 2 -->
+	<div class="container-fluid">
+		<div class="row">
+			<div id="box" class="col-md-6 no-padding">
+				<div class="about-content red">
+					<h1> Box op maat </h1>
+					<p class="opmaat-p"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis volutpat lorem, eget tempor ligula. Nulla eu
+						consectetur felis. Curabitur pulvinar egestas eros, id congue turpis. Etiam at erat facilisis, semper diam vitae, rhoncus
+						eros </p>
+					<button type="button" class="redbutton white"> Bestel </button>
+				</div>
+			</div>
+			<div id="right" class="col-md-6 no-padding">
+				<div class="box-img"></div>
+			</div>
+		</div>
+	</div>
+	<!-- Blok 3 -->
+	<div class="container-fluid">
+		<div class="row">
+			<div id="box" class="col-md-4 no-padding">
+				<div class="about-content red">
+					<h2> Ruilen </h2>
+					<p class="opmaat-p"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis volutpat lorem, eget tempor ligula. Nulla eu
+						consectetur felis. Curabitur pulvinar egestas eros, id congue turpis. Etiam at erat facilisis, semper diam vitae, rhoncus
+						eros </p>
+					<button type="button" class="redbutton white"> Bestel </button>
+				</div>
+			</div>
+			<div class="col-md-4 no-padding">
+				<div class="round-img"></div>
+			</div>
+			<div id="box" class="col-md-4 no-padding">
+				<div class="about-content red">
+					<h2> Personalizeren </h2>
+					<p class="opmaat-p"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis volutpat lorem, eget tempor ligula. Nulla eu
+						consectetur felis. Curabitur pulvinar egestas eros, id congue turpis. Etiam at erat facilisis, semper diam vitae, rhoncus
+						eros </p>
+					<button type="button" class="redbutton white"> Bestel </button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- testblok
+<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6 col-md-6 col-lg-6 no-padding trapezium">
+				<div class=""></div>
+			</div>
+			<div id="about" class="col-sm-6 col-md-6 col-lg-6 no-padding trapezium2">
 
-    <script type="x/templates" id="strip-items">
-        <div class="strip-items row">
-            <div v-on:click="stripClick(strip)" v-for="strip in strips" class="strip-item" v-bind:class="strip.orientation==='landscape'? 'landscape': 'portrait'"
-                v-bind:style="{backgroundColor: strip.color }">
-                <img v-bind:alt="strip.name" v-bind:src="'images/'+ strip.image">
-            </div>
-        </div>
-    </script>
+						<div class=" white ">
+					<h1> Over ons </h1>
+					<p class="about-p"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis volutpat lorem, eget tempor ligula. Nulla eu
+						consectetur felis. Curabitur pulvinar egestas eros, id congue turpis. Etiam at erat facilisis, semper diam vitae, rhoncus
+						eros </p>
+						</div>
+			</div>
+		</div>
+	</div>
+	 -->
 
-    <script src="components/strip-items.js"></script>
-    <script src="js/strips.js"></script>
-    <script src="js/app.js"></script>
+	<script src="script/script.js"></script>
 </body>
 
 </html>

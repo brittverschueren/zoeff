@@ -1,32 +1,30 @@
 {
-  "name": "Comicshop",
+  "name": "comicshop-web",
   "version": "1.0.0",
-  "description": "https://nodejs.org/en/ v7.10.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "css": "node-sass styles/style.scss -o css --output-style compressed",
-    "css:watch": "npm run css && node-sass styles/style.scss -wo css --output-style compressed",
+    "css": "node-sass styles/styles.scss -o css --output-style compressed",
+    "css:watch": "npm run css && node-sass styles/styles.scss -wo css --output-style compressed",
     "serve": "serve ./",
     "start": "concurrently --kill-others \"npm run css:watch\" \"npm run serve\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brittverschueren/zoeff.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/brittverschueren/zoeff/issues"
-  },
-  "homepage": "https://github.com/brittverschueren/zoeff#readme",
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6"
   },
   "devDependencies": {
     "serve": "5.1.5",
     "node-sass": "4.5.3",
-    "concurrently": "3.4.0",
-    "vex-js": "3.1.1"
-  }
+    "concurrently": "3.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brittverschueren/zoeff.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brittverschueren/zoeff/issues"
+  },
+  "homepage": "https://github.com/brittverschueren/zoeff#readme"
 }
