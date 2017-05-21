@@ -8,28 +8,38 @@ var zoeff = zoeff || {};
         },
         {
             id: 2,
-            name: 'Suske en Wiske 1',
-            image: 'suskeenwiske.png',
+            name: 'Jommeke',
+            image: 'jommeke.png',
         },
         {
             id: 3,
-            name: 'Suske en Wiske 2',
-            image: 'suskeenwiske.png',
+            name: 'Lucky Luke',
+            image: 'luckyluke.png',
         },
         {
             id: 4,
-            name: 'Suske en Wiske 3',
-            image: 'suskeenwiske.png',
+            name: 'Nero',
+            image: 'nero.png',
         },
         {
             id: 5,
-            name: 'Suske en Wiske 4',
-            image: 'suskeenwiske.png',
+            name: 'F.C. De Kampioenen',
+            image: 'fcdekampioenen.png',
         },
         {
             id: 6,
-            name: 'Suske en Wiske 5',
-            image: 'suskeenwiske.png',
+            name: 'De Smurfen',
+            image: 'desmurfen.png',
+        },
+         {
+            id: 7,
+            name: 'Urbanus',
+            image: 'urbanus.png',
+        },
+         {
+            id: 8,
+            name: 'De Kiekeboes',
+            image: 'dekiekeboes.png',
         },
     ];
 
