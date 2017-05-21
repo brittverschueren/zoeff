@@ -32,11 +32,12 @@ var zoeff = zoeff || {};
             image: 'suskeenwiske.png',
         },
     ];
-    app.userStrips = [
-        {
-            id: 1,
-            name: 'Suske en Wiske',
-            image: 'suskeenwiske.png',
-        },
-    ];
+
+    var userStripsString = localStorage.getItem('user-strips');
+
+    app.userStrips = !!userStripsString ? JSON.parse(userStripsString) : [];
+
+    app.saveStrips = function (userStrips) {
+        localStorage.setItem('user-strips', JSON.stringify(userStrips));
+    }
 })(zoeff);
