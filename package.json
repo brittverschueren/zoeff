@@ -26,6 +26,7 @@
   "devDependencies": {
     "serve": "5.1.5",
     "node-sass": "4.5.3",
-    "concurrently": "3.4.0"
+    "concurrently": "3.4.0",
+    "vex-js": "3.1.1"
   }
 }

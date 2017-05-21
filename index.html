@@ -29,6 +29,17 @@
 
     <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
+    <script src="vendor/vex.combined.min.js"></script>
+    <script>vex.defaultOptions.className = 'vex-theme-default'</script>
+
+    <script type="x/templates" id="strip-items">
+        <div class="strip-items row">
+            <div v-on:click="stripClick(strip)" v-for="strip in strips" class="strip-item" v-bind:class="strip.orientation==='landscape'? 'landscape': 'portrait'"
+                v-bind:style="{backgroundColor: strip.color }">
+                <img v-bind:alt="strip.name" v-bind:src="'images/'+ strip.image">
+            </div>
+        </div>
+    </script>
 
     <script src="components/strip-items.js"></script>
     <script src="js/strips.js"></script>
