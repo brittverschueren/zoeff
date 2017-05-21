@@ -4,7 +4,7 @@
   "description": "https://nodejs.org/en/ v7.10.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "serve ./public"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/brittverschueren/zoeff/issues"
   },
-  "homepage": "https://github.com/brittverschueren/zoeff#readme"
+  "homepage": "https://github.com/brittverschueren/zoeff#readme",
+  "devDependencies": {
+    "serve": "5.1.5"
+  }
 }
