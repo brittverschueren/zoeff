@@ -9,18 +9,18 @@ $body-font: 'Raleway', sans-serif;
 /* font-family: 'Bangers', cursive;
 font-family: 'Raleway', sans-serif; */
 body{
-  h1, h2{
+  h1, h2, h3{
     font-family: $header-font;
   }
   h1{
     font-size: 5em;
   }
   h2{
-    font-size: 4em;
+    font-size: 3em;
   }
   p{
     font-family: $body-font;
-    font-size: 1.2em;
+    font-size: 1em;
   }
 }
 
@@ -32,6 +32,8 @@ body{
 }
 
 .navigatie{
+  z-index: 100;
+  position: fixed;
   text-align:left;
   background-color:$red;
   width:100%;
@@ -65,10 +67,24 @@ body{
 }
 
 .header{
-
-    img{
+    .image{
+      position:relative;
       width: 100%;
-    } 
+        img{
+          width: 100%;
+        } 
+    }
+    
+    .header-text{
+      position: absolute;
+      top: 10em;
+      right: 20rem;
+     
+     background-color: rgba(255,255,255,0.5);
+     padding: 50px;
+     color: $red;
+   
+    }
 }
 
 .row{
@@ -77,14 +93,9 @@ body{
         padding-right:0;
         padding-left:0;
     } 
-    .about-img{
-      height: 500px;
-      background-image: url("../images/about.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
+    
     #box {
-      height: 500px;
+      height: auto;
 
       &.red-box{
         background-color:$red;
@@ -100,12 +111,21 @@ body{
         .about-p, .opmaat-p{
           text-align: left;
         }
+    
+    }
+        .about-img{
+      height: 500px;
+      background-image: url("../images/about.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
     .box-img{
       height: 500px;
       background-image: url("../images/box.jpg");
       background-size: cover;
       background-repeat: no-repeat;
+      background-position: center;
     }
 
     .round-img{

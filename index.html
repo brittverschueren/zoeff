@@ -5,7 +5,7 @@
 	<title>Zoeff!</title>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Bangers|Raleway" rel="stylesheet">
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -15,18 +15,25 @@
 		<div class="logo"> </div>
 		<nav>
 			<a href="#"> Home </a>
-			<a href="#"> Over ons </a>
-			<a href="#"> Box op maat </a>
-			<a href="#"> Ruilen </a>
+			<a href="#1"> Over ons </a>
+			<a href="#2"> Box op maat </a>
+			<a href="#3"> Ruilen </a>
 			<a href="app">Stripmuur</a>
 		</nav>
+
 	</div>
 	<div class="header">
-		<img src="images/header.png">
+		<div class="image">
+			<img src="images/header.png">
+		</div>
+		<div class="header-text">
+			<h3> Welkom bij Zoeff!</h3>
+			<p> Jouw gepersonaliseerde stripbox. </p>
+		</div>
 	</div>
 
 	<!-- Blok 1 -->
-	<div class="container-fluid">
+	<div id="1" class="container-fluid">
 		<div class="row">
 			<div class="col-md-6 no-padding">
 				<div class="about-img"></div>
@@ -35,20 +42,21 @@
 
 				<div class="content white">
 					<h1> Over ons </h1>
-					<p class="about-p"> Met Zoeff! krijg je maandelijks een stripbox thuisgestuurd. Deze box wordt samengesteld op basis van jouw interesses.  </p>
+					<p class="about-p"> Met Zoeff! krijg je maandelijks een stripbox thuisgestuurd. Deze box wordt samengesteld op basis van jouw interesses.
+					</p>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- Blok 2 -->
-	<div class="container-fluid">
+	<div id="2" class="container-fluid">
 		<div class="row">
 			<div id="box" class="col-md-6 no-padding">
-				<div class="content red">
+				<div class="content red clearfix">
 					<h1> Box op maat </h1>
-					<p class="opmaat-p"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis volutpat lorem, eget tempor ligula. Nulla eu
-						consectetur felis. Curabitur pulvinar egestas eros, id congue turpis. Etiam at erat facilisis, semper diam vitae, rhoncus
-						eros </p>
+					<p class="opmaat-p"> Als je lid wordt van Zoeff! krijg je maandelijks een stripbox opgestuurd. Deze wordt samengesteld op basis van jou interesses!
+						De box past in je brievenbus, dus je hoeft je ook geen zorgen te maken om thuis te blijven. Wil je lid worden van Zoeff!?
+						Meld je dan snel aan! </p>
 					<button type="button" class="btn btn-danger"> Bestel </button>
 				</div>
 			</div>
@@ -58,15 +66,14 @@
 		</div>
 	</div>
 	<!-- Blok 3 -->
-	<div class="container-fluid">
+	<div id="3" class="container-fluid">
 		<div class="row">
 			<div id="box" class="col-md-4 no-padding red-box">
 				<div class="content white">
 					<h2> Ruilen </h2>
-					<p class="opmaat-p"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis volutpat lorem, eget tempor ligula. Nulla eu
-						consectetur felis. Curabitur pulvinar egestas eros, id congue turpis. Etiam at erat facilisis, semper diam vitae, rhoncus
-						eros </p>
-					<button type="button" class="btn btn-warning red"> Bestel </button>
+					<p class="opmaat-p"> Heb je reeds een strip die in je box zit? Geen zorgen! Je kan hem makkelijk omruilen met je mede-stripliefhebbers via
+						ons forum. </p>
+					<button type="button" class="btn btn-warning red"> Ruilen </button>
 				</div>
 			</div>
 			<div id="box" class="col-md-4 no-padding red-box">
@@ -74,15 +81,15 @@
 			</div>
 			<div id="box" class="col-md-4 no-padding red-box">
 				<div class="content white">
-					<h2> Personalizeren </h2>
-					<p class="opmaat-p"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis volutpat lorem, eget tempor ligula. Nulla eu
-						consectetur felis. Curabitur pulvinar egestas eros, id congue turpis. Etiam at erat facilisis, semper diam vitae, rhoncus
-						eros </p>
-					<button type="button" class="btn btn-warning red"> Bestel </button>
+					<h2> Bouw een stripmuur </h2>
+					<p class="opmaat-p"> Jouw box wordt persoonlijk samengesteld. Zo kan je in je account jouw eigen stripmuur bouwen. Wil je meer info? Maak
+						dan hier je account aan. </p>
+					<button type="button" class="btn btn-warning red"> Registreren </button>
 				</div>
 			</div>
 		</div>
 	</div>
+
 	<!-- testblok
 <div class="container-fluid">
 		<div class="row">
