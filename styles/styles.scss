@@ -1,5 +1,6 @@
 @import "bootstrap.override.scss";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../scss/font-awesome.scss";
 
 // Variables //
 $header-font: 'Bangers', cursive;
@@ -62,6 +63,13 @@ body{
         }
         a:hover{
         text-decoration: underline;
+        }
+        .sm-login{
+          float:right;
+          color:white;
+          a{
+            padding: 0 0.5em;
+          }
         }
     }
 }
