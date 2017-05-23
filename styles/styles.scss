@@ -40,7 +40,7 @@ body{
   width:100%;
   display:flex;
     .logo{
-    background-image:url("../images/logo.png");
+    background-image:url("../images/logo-white.png");
     background-size:contain;
     background-repeat:no-repeat;
     background-position:center;
@@ -144,6 +144,38 @@ body{
       background-position: center center;
       margin: auto;
     }
+    .form-horizontal{
+      font-family:$header-font; 
+      font-size:1.2em; 
+      color:$red;
+    }
+    .footer{
+        p, a{
+          font-family: $body-font;
+          font-size: 1.2em;
+          color: $red;
+        }
+      }
+    .sm-footer{
+          i{
+              font-size: 5em;
+              color:$red;
+              padding: 25px 25px;
+          }
+          i:hover{
+            color: rgba($red, 0.8) ;
+            
+          }
+        }
+        .footer-logo{
+           background-image:url("../images/logo.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    height:100px;
+  
+    margin:auto;
+        }
 }
 
 
