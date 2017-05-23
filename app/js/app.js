@@ -16,6 +16,8 @@ var zoeff = zoeff || {};
 
     var vueApp = new Vue({
         router
-    }).$mount('#app')
+    }).$mount('#app');
+
+    Vue.use(VueFire);
 })(zoeff);
 
