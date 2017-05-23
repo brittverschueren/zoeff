@@ -8,29 +8,28 @@
 <body>
     <div id="app">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="row">
-                        <div class="col-12">
-                            <h1>Mijn strips</h1>
-                            <button class="btn btn-danger float-right" v-on:click="toggleStrip" v-bind:disabled="userStrips.length>=5">Add strip</button>
-                        </div>
-                    </div>
-                    <strip-items v-bind:strips="userStrips" v-bind:click="deleteStrip"></strip-items>
-                </div>
-
-                <div v-if="add" class="col-12 col-md-3 push-md-3">
-                    <h1>Strips toevoegen</h1>
-                    <strip-items v-bind:strips="allStrips" v-bind:click="addStrip"></strip-items>
-                </div>
-            </div>
+            <p>
+                <!-- use router-link component for navigation. -->
+                <!-- specify the link by passing the `to` prop. -->
+                <!-- <router-link> will be rendered as an `<a>` tag by default -->
+                <router-link to="/my">Mine</router-link>
+                <router-link to="/add">Add</router-link>
+                <router-link to="/login">Login</router-link>
+                
+            </p>
+            <!-- route outlet -->
+            <!-- component matched by the route will render here -->
+            <router-view></router-view>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
-    <script src="https://unpkg.com/vue"></script>
     <script src="vendor/vex.combined.min.js"></script>
-    <script>vex.defaultOptions.className = 'vex-theme-default'</script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-router"></script>
+    <script>
+        vex.defaultOptions.className = 'vex-theme-default'
+    </script>
 
     <script type="x/templates" id="strip-items">
         <div class="strip-items row">
@@ -41,7 +40,99 @@
         </div>
     </script>
 
+    <script type="x/templates" id="my-strips">
+        <strip-items v-bind:strips="userStrips" v-bind:click="deleteStrip"></strip-items>
+    </script>
+
+    <script type="x/templates" id="all-strips">
+        <strip-items v-bind:strips="allStrips" v-bind:click="addStrip"></strip-items>
+    </script>
+
+    <script type="x/templates" id="login">
+        <div id="box" class="col-md-6 no-padding">
+            <form class="form-horizontal">
+                <h1> Login </h1>
+                <div class="form-group">
+                    <label for="emailadres1" class=" col-sm-10 control-label">E-mailadres</label>
+                    <div class="col-sm-5">
+                        <input type="email" class="form-control" id="emailadres1" placeholder="E-mailadres">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="wachtwoord1" class=" col-sm-10 control-label">Wachtwoord</label>
+                    <div class="col-sm-5">
+                        <input type="password" class="form-control" id="wachtwoord1" placeholder="Wachtwoord">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-danger">Aanmelden</button>
+                        <router-link to="/register">Registreren</router-link>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </script>
+
+    <script type="x/templates" id="register">
+        <div id="box" class="col-md-6 no-padding">
+            <form class="form-horizontal">
+                <h1> Registreren </h1>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="naam" class=" col-sm-5 control-label">Naam*</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="naam" placeholder="Naam">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="voornaam" class=" col-sm-5 control-label">Voornaam*</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="voornaam" placeholder="Voornaam">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="gebruikersnaam" class=" col-sm-10 control-label">Gebruikersnaam*</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="gebruikersnaam" placeholder="Gebruikersnaam">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="emailadres2" class=" col-sm-10 control-label">E-mailadres*</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="emailadres2" placeholder="E-mailadres">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="wachtwoord2" class=" col-sm-10 control-label">Wachtwoord*</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="wachtwoord2" placeholder="Wachtwoord">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="telefoon" class=" col-sm-10 control-label">Telefoonnummer*</label>
+                    <div class="col-sm-10">
+                        <input type="tel" class="form-control" id="telefoon" placeholder="Telefoonnummer">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-danger">Registreren</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </script>
+
+    <script src="helpers/update-all-strips.js"></script>
+    <script src="components/all-strips.js"></script>
+    <script src="components/my-strips.js"></script>
     <script src="components/strip-items.js"></script>
+    <script src="components/login.js"></script>
+    <script src="components/register.js"></script>
     <script src="js/strips.js"></script>
     <script src="js/app.js"></script>
 </body>
