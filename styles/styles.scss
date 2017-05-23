@@ -158,9 +158,9 @@ body{
       }
     .sm-footer{
           i{
-              font-size: 5em;
+              font-size: 4em;
               color:$red;
-              padding: 25px 25px;
+              padding: 25px 10px;
           }
           i:hover{
             color: rgba($red, 0.8) ;
@@ -168,14 +168,13 @@ body{
           }
         }
         .footer-logo{
-           background-image:url("../images/logo.png");
-    background-size:contain;
-    background-repeat:no-repeat;
-    background-position:center;
-    height:100px;
-  
-    margin:auto;
-        }
+          background-image:url("../images/logo.png");
+          background-size:contain;
+          background-repeat:no-repeat;
+          background-position:center;
+          height:100px;
+          margin:auto;
+              }
 }
 
 
