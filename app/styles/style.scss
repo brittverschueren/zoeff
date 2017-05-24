@@ -37,3 +37,17 @@ $a :160px;
         }
     }
 }
+body{
+    #app{
+        .container-fluid{
+            p{
+                margin-top: 20px;
+                    a{
+                        color:white;
+                        padding: 10px;
+                        background-color: $red;
+                    }
+                }
+            }
+        }
+    }
