@@ -4,6 +4,7 @@
 @import "../node_modules/vex-js/sass/vex.sass";
 
 $a :160px;
+$header-font: 'Bangers';
 
 @mixin fixed-size($width, $height) {
   min-width: $width;
@@ -38,6 +39,9 @@ $a :160px;
     }
 }
 body{
+    h1, h2, h3, h4{
+        font-family: $header-font;
+    }
     #app{
         .container-fluid{
             p{
@@ -51,3 +55,20 @@ body{
             }
         }
     }
+
+.login{
+    width: 80%;
+    margin: auto;
+    background-image: url(../images/login.png);
+    .login-form{
+        background-color: rgba($white, 1);
+        padding: 2% 0;
+        border-radius: 20px;
+    }
+        form{
+            &.form-horizontal{
+                width: 350px;
+                margin:auto;
+            }
+        }
+}

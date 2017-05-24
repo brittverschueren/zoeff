@@ -39,6 +39,19 @@
                 v-bind:style="{backgroundColor: strip.color }">
                 <img v-bind:alt="strip.name" v-bind:src="'images/'+ strip.image">
             </div>
+            <svg x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length>0">
+                <polygon points="0,0 0,540 960,0 " />
+                <image v-bind:href="'images/'+strips[0].image" x="0" y="0" height="550px" width="1000px"></image>
+                <polygon points="0,540 0,1080 960,540 960,0 " />
+                <image v-bind:href="'images/'+strips[1].image" x="0" y="540" height="550px" width="1000px"></image>
+                <polygon points="1920,1080 960,540 0,1080 " />
+                <image v-bind:href="'images/'+strips[2].image" x="960" y="540" height="550px" width="1000px"></image>
+                <polygon points="960,540 1920,540 1920,1080 " />
+                <image v-bind:href="'images/'+strips[3].image" x="1520" y="540" height="550px" width="1000px"></image>
+                <rect x="960" width="960" height="540" />
+                <image v-bind:href="'images/'+strips[4].image" x="960" y="0" height="550px" width="1000px"></image>
+            </svg>
+
         </div>
     </script>
 
@@ -51,23 +64,23 @@
     </script>
 
     <script type="x/templates" id="login">
-        <div id="box" class="col-md-6 no-padding">
+        <div class="login-form col-sm-3 col-md-3 col-lg-3 ">
             <form class="form-horizontal" v-on:submit="login">
                 <h1> Login </h1>
                 <div class="form-group">
-                    <label for="username" class=" col-sm-10 control-label">Username</label>
-                    <div class="col-sm-5">
-                        <input class="form-control" id="username" placeholder="Username">
+                    <label for="username" class="control-label">Username</label>
+                    <div>
+                        <input class="form-control" id="username" placeholder="Username" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="wachtwoord" class=" col-sm-10 control-label">Wachtwoord</label>
-                    <div class="col-sm-5">
-                        <input type="password" class="form-control" id="wachtwoord" placeholder="Wachtwoord">
+                    <label for="wachtwoord" class=" control-label">Wachtwoord</label>
+                    <div>
+                        <input type="password" class="form-control" id="wachtwoord" placeholder="Wachtwoord" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
+                    <div class="col-sm-offset-2">
                         <button type="submit" class="btn btn-danger">Aanmelden</button>
                         <router-link to="/register">Registreren</router-link>
                     </div>
@@ -77,7 +90,7 @@
     </script>
 
     <script type="x/templates" id="register">
-        <div id="box" class="col-md-6 no-padding">
+        <div class="register">
             <form class="form-horizontal" v-on:submit="register">
                 <h1> Registreren </h1>
                 <div class="form-group">
@@ -85,13 +98,13 @@
                         <div class="col-md-6">
                             <label for="naam" class=" col-sm-5 control-label">Naam*</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="naam" placeholder="Naam">
+                                <input type="text" class="form-control" id="naam" placeholder="Naam" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <label for="voornaam" class=" col-sm-5 control-label">Voornaam*</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="voornaam" placeholder="Voornaam">
+                                <input type="text" class="form-control" id="voornaam" placeholder="Voornaam" required>
                             </div>
                         </div>
                     </div>
@@ -99,25 +112,25 @@
                 <div class="form-group">
                     <label for="gebruikersnaam" class=" col-sm-10 control-label">Gebruikersnaam*</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="gebruikersnaam" placeholder="Gebruikersnaam">
+                        <input type="text" class="form-control" id="gebruikersnaam" placeholder="Gebruikersnaam" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="emailadres" class=" col-sm-10 control-label">E-mailadres*</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="emailadres" placeholder="E-mailadres">
+                        <input type="email" class="form-control" id="emailadres" placeholder="E-mailadres" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="wachtwoord" class=" col-sm-10 control-label">Wachtwoord*</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" id="wachtwoord" placeholder="Wachtwoord">
+                        <input type="password" class="form-control" id="wachtwoord" placeholder="Wachtwoord" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="telefoon" class=" col-sm-10 control-label">Telefoonnummer*</label>
                     <div class="col-sm-10">
-                        <input type="tel" class="form-control" id="telefoon" placeholder="Telefoonnummer">
+                        <input type="tel" class="form-control" id="telefoon" placeholder="Telefoonnummer" required>
                     </div>
                 </div>
                 <div class="form-group">
