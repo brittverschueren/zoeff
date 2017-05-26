@@ -21,11 +21,6 @@
             attachclicks(this.$el, this.strips, this.click)
         },
         props: ['strips', 'click'],
-        methods: {
-            stripClick: function (strip) {
-                this.click(strip);
-            }
-        },
         template: '#strip-wall',
     });
 })();
