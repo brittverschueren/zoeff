@@ -39,24 +39,57 @@
                 v-bind:style="{backgroundColor: strip.color }">
                 <img v-bind:alt="strip.name" v-bind:src="'images/'+ strip.image">
             </div>
-            <svg x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length>0">
-                <polygon points="0,0 0,540 960,0 " />
-                <image v-bind:href="'images/'+strips[0].image" x="0" y="0" height="550px" width="1000px"></image>
-                <polygon points="0,540 0,1080 960,540 960,0 " />
-                <image v-bind:href="'images/'+strips[1].image" x="0" y="540" height="550px" width="1000px"></image>
-                <polygon points="1920,1080 960,540 0,1080 " />
-                <image v-bind:href="'images/'+strips[2].image" x="960" y="540" height="550px" width="1000px"></image>
-                <polygon points="960,540 1920,540 1920,1080 " />
-                <image v-bind:href="'images/'+strips[3].image" x="1520" y="540" height="550px" width="1000px"></image>
-                <rect x="960" width="960" height="540" />
-                <image v-bind:href="'images/'+strips[4].image" x="960" y="0" height="550px" width="1000px"></image>
+        </div>
+    </script>
+
+    <script type="x/templates" id="strip-wall">
+        <div class="strip-items row">
+            <svg x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===1">
+                <polygon class="strip-1" points="0,0 0,540 960,0 " v-bind:style="{fill:strips[0].color}" />
+                <image class="strip-1" v-bind:href="'images/'+strips[0].image" x="0" y="0" height="550px" width="1000px"></image>
+            </svg>
+            <svg x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===2">
+                <polygon class="strip-1" points="0,0 0,540 960,0 " v-bind:style="{fill:strips[0].color}" />
+                <image class="strip-1" v-bind:href="'images/'+strips[0].image" x="0" y="0" height="550px" width="1000px"></image>
+                <polygon class="strip-2" points="0,540 0,1080 960,540 960,0" v-bind:style="{fill:strips[1].color}" />
+                <image class="strip-2" v-bind:href="'images/'+strips[1].image" x="0" y="540" height="550px" width="1000px"></image>
+            </svg>
+            <svg x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===3">
+                <polygon class="strip-1" points="0,0 0,540 960,0 " v-bind:style="{fill:strips[0].color}" />
+                <image class="strip-1" v-bind:href="'images/'+strips[0].image" x="0" y="0" height="550px" width="1000px"></image>
+                <polygon class="strip-2" points="0,540 0,1080 960,540 960,0" v-bind:style="{fill:strips[1].color}" />
+                <image class="strip-2" v-bind:href="'images/'+strips[1].image" x="0" y="540" height="550px" width="1000px"></image>
+                <polygon class="strip-3" points="1920,1080 960,540 0,1080 " v-bind:style="{fill:strips[2].color}" />
+                <image class="strip-3" v-bind:href="'images/'+strips[2].image" x="960" y="540" height="550px" width="1000px"></image>
+            </svg>
+            <svg x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===4">
+                <polygon class="strip-1" points="0,0 0,540 960,0 " v-bind:style="{fill:strips[0].color}" />
+                <image class="strip-1" v-bind:href="'images/'+strips[0].image" x="0" y="0" height="550px" width="1000px"></image>
+                <polygon class="strip-2" points="0,540 0,1080 960,540 960,0" v-bind:style="{fill:strips[1].color}" />
+                <image class="strip-2" v-bind:href="'images/'+strips[1].image" x="0" y="540" height="550px" width="1000px"></image>
+                <polygon class="strip-3" points="1920,1080 960,540 0,1080 " v-bind:style="{fill:strips[2].color}" />
+                <image class="strip-3" v-bind:href="'images/'+strips[2].image" x="960" y="540" height="550px" width="1000px"></image>
+                <polygon class="strip-4" points="960,540 1920,540 1920,1080 " v-bind:style="{fill:strips[3].color}" />
+                <image class="strip-4" v-bind:href="'images/'+strips[3].image" x="1520" y="540" height="550px" width="1000px"></image>
+            </svg>
+            <svg x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===5">
+                <polygon class="strip-1" points="0,0 0,540 960,0 " v-bind:style="{fill:strips[0].color}" />
+                <image class="strip-1" v-bind:href="'images/'+strips[0].image" x="0" y="0" height="550px" width="1000px"></image>
+                <polygon class="strip-2" points="0,540 0,1080 960,540 960,0" v-bind:style="{fill:strips[1].color}" />
+                <image class="strip-2" v-bind:href="'images/'+strips[1].image" x="0" y="540" height="550px" width="1000px"></image>
+                <polygon class="strip-3" points="1920,1080 960,540 0,1080 " v-bind:style="{fill:strips[2].color}" />
+                <image class="strip-3" v-bind:href="'images/'+strips[2].image" x="960" y="540" height="550px" width="1000px"></image>
+                <polygon class="strip-4" points="960,540 1920,540 1920,1080 " v-bind:style="{fill:strips[3].color}" />
+                <image class="strip-4" v-bind:href="'images/'+strips[3].image" x="1520" y="540" height="550px" width="1000px"></image>
+                <rect class="strip-5" x="960" width="960" height="540" v-bind:style="{fill:strips[4].color}" />
+                <image class="strip-5" v-bind:href="'images/'+strips[4].image" x="960" y="0" height="550px" width="1000px"></image>
             </svg>
 
         </div>
     </script>
 
     <script type="x/templates" id="my-strips">
-        <strip-items v-bind:strips="userStrips" v-bind:click="deleteStrip"></strip-items>
+        <strip-wall v-bind:strips="userStrips" v-bind:click="deleteStrip"></strip-wall>
     </script>
 
     <script type="x/templates" id="all-strips">
@@ -146,6 +179,7 @@
     <script src="helpers/update-all-strips.js"></script>
     <script src="components/all-strips.js"></script>
     <script src="components/my-strips.js"></script>
+    <script src="components/strip-wall.js"></script>
     <script src="components/strip-items.js"></script>
     <script src="components/login.js"></script>
     <script src="components/register.js"></script>
