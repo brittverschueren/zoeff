@@ -1,7 +1,9 @@
+$fa-font-path: "../../fonts";
 @import "bootstrap.override.scss";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/vex-js/sass/vex-theme-default.sass";
 @import "../node_modules/vex-js/sass/vex.sass";
+@import "../../scss/font-awesome.scss";
 
 $a :160px;
 $header-font: 'Bangers';
@@ -57,18 +59,81 @@ body{
     }
 
 .login{
-    width: 80%;
     margin: auto;
     background-image: url(../images/login.png);
     .login-form{
-        background-color: rgba($white, 1);
-        padding: 2% 0;
-        border-radius: 20px;
+       
     }
         form{
             &.form-horizontal{
-                width: 350px;
-                margin:auto;
+                max-width: 280px;
+                margin: 60px auto 10px;
+                input{
+                    &.form-control{
+                    position: relative;
+                    font-size: 16px;
+                    height: auto;
+                    padding: 10px;
+                      margin-bottom: -1px;
+     border-top: 1px solid transparent;
+     border-right: 1px solid transparent;
+     border-left: 1px solid transparent;
+     box-shadow: none;
+	  border-radius: 3px 3px 0px 0px;
+                    }
+                }
             }
         }
+}
+
+.strip-items{
+    &.row{
+        .stripmuur{
+            height: 60%;
+            width: 60%;
+            margin: auto;
+        }
+    }
+}
+
+.navigatie{
+ // z-index: 100;
+  //position: fixed;
+  text-align:left;
+  background-color:$red;
+  width:100%;
+  display:flex;
+    .logo{
+    background-image:url("../images/logo-white.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    height:50px;
+    width:10%;
+    margin:auto;
+    }
+    nav{
+      display:inline-block;
+      width:100%;
+      font-size:1.4em;
+      margin-left: auto;
+      align-self: center;
+      margin-right: auto;
+        a{
+          text-decoration:none;
+          color:$white;
+          font-family: 'Bangers';
+          padding: 0 1em;
+        }
+        a:hover{
+        text-decoration: underline;
+        }
+        .sm-login{
+          float:right;
+          color:white;
+          a{
+            padding: 0 0.5em;
+          }
+        }
+    }
 }
