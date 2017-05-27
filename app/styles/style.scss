@@ -112,13 +112,16 @@ body{
     width:10%;
     margin:auto;
     }
-    nav{
+    .nav{
       display:inline-block;
       width:100%;
       font-size:1.4em;
       margin-left: auto;
       align-self: center;
       margin-right: auto;
+      li{
+        display: 	inline;
+      }
         a{
           text-decoration:none;
           color:$white;
@@ -130,10 +133,50 @@ body{
         }
         .sm-login{
           float:right;
-          color:white;
+          color:$white;
           a{
             padding: 0 0.5em;
           }
         }
     }
+}
+.slicknav_menu {
+		display:none;
+	}
+
+    .logo{
+    background-image:url("../images/logo-white.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    height:100px;
+    width: 100px;
+    float: left;
+    margin:auto;
+    }
+
+@media (max-width: 768px) {
+  .navigatie{
+     display:none;
+  }
+
+    .mobilemenu{
+        .slicknav_menu {
+        display:block;
+        background-color: $red;
+          a{
+            background-color: $red;
+            font-family: $header-font;
+            font-size: 2.5em;
+            text-align: center;
+          }
+          .sm-login{
+            a{
+              i{
+              display: none;
+            }
+          }
+      }
+    }
+  }
 }

@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../slicknav/slicknav.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -10,17 +11,18 @@
     <div id="app">
         <div class="navigatie">
             <div class="logo"> </div>
-            <nav>
-                <a href="/"> Home </a>
-                <router-link to="/my">Mine</router-link>
-                <router-link to="/add">Add</router-link>
+            <ul class="nav">
+                <li><a href="/"> Home </a></li>
+                <li><router-link to="/my">Mine</router-link></li>
+                <li><router-link to="/add">Add</router-link></li>
                 <div class="sm-login">
                     <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
                 </div>
-            </nav>
+            </ul>
         </div>
+        <div class="mobilemenu"></div>
         <div class="container-fluid">
             <p>
                 <!-- use router-link component for navigation. -->
@@ -191,6 +193,14 @@
     <script src="components/register.js"></script>
     <script src="js/strips.js"></script>
     <script src="js/app.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="../slicknav/jquery.slicknav.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".nav").slicknav();
+            $(".slicknav_menu").prepend('<div class="logo"> </div>')
+        });
+    </script>
 </body>
 
 </html>

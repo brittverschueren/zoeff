@@ -6,6 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Bangers|Raleway" rel="stylesheet">
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+	<link rel="stylesheet" href="slicknav/slicknav.css">
+
 
 
 	<meta charset="utf-8">
@@ -15,84 +17,85 @@
 <body>
 	<div class="navigatie">
 		<div class="logo"> </div>
-		<nav>
-			<a href="#"> Home </a>
-			<a href="#1"> Over ons </a>
-			<a href="#2"> Box op maat </a>
-			<a href="#3"> Ruilen </a>
+		<ul class="nav">
+			<li><a href="#"> Home </a></li>
+			<li><a href="#1"> Over ons </a></li>
+			<li><a href="#2"> Box op maat </a></li>
+			<li><a href="#3"> Ruilen </a></li>
 			<div class="sm-login">
 				<a href="app"> login </a>
 				<a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
 				<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 				<a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
 			</div>
-		</nav>
+		</ul>
 	</div>
+	<div class="mobilemenu"></div>
 	<div class="header">
 		<div class="image">
 			<img src="images/header2.png">
 		</div>
-		
 
-	<!-- Blok 1 -->
-	<div id="1" class="container-fluid">
-		<div class="row">
-			<div class="col-md-12 col-lg-6 no-padding">
-				<div class="about-img"></div>
-			</div>
-			<div id="box" class="col-md-12 col-lg-6 no-padding red-box">
 
-				<div class="content white">
-					<h1> Over ons </h1>
-					<p class="about-p"> Met Zoeff! krijg je maandelijks een stripbox thuisgestuurd. Deze box wordt samengesteld op basis van jouw interesses.
-					</p>
+		<!-- Blok 1 -->
+		<div id="1" class="container-fluid">
+			<div class="row">
+				<div class="col-md-12 col-lg-6 no-padding">
+					<div class="about-img"></div>
+				</div>
+				<div id="box" class="col-md-12 col-lg-6 no-padding red-box">
+
+					<div class="content white">
+						<h1> Over ons </h1>
+						<p class="about-p"> Met Zoeff! krijg je maandelijks een stripbox thuisgestuurd. Deze box wordt samengesteld op basis van jouw interesses.
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- Blok 2 -->
-	<div id="2" class="container-fluid">
-		<div class="row">
-			<div id="box" class="col-md-12 col-lg-6 no-padding">
-				<div class="content red clearfix">
-					<h1> Box op maat </h1>
-					<p class="opmaat-p"> Als je lid wordt van Zoeff! krijg je maandelijks een stripbox opgestuurd. Deze wordt samengesteld op basis van jou interesses!
-						De box past in je brievenbus, dus je hoeft je ook geen zorgen te maken om thuis te blijven. Wil je lid worden van Zoeff!?
-						Meld je dan snel aan! </p>
-					<button type="button" class="btn btn-danger"> Bestel </button>
+		<!-- Blok 2 -->
+		<div id="2" class="container-fluid">
+			<div class="row">
+				<div id="box" class="col-md-12 col-lg-6 no-padding">
+					<div class="content red clearfix">
+						<h1> Box op maat </h1>
+						<p class="opmaat-p"> Als je lid wordt van Zoeff! krijg je maandelijks een stripbox opgestuurd. Deze wordt samengesteld op basis van jou
+							interesses! De box past in je brievenbus, dus je hoeft je ook geen zorgen te maken om thuis te blijven. Wil je lid
+							worden van Zoeff!? Meld je dan snel aan! </p>
+						<button type="button" class="btn btn-danger"> Bestel </button>
+					</div>
 				</div>
-			</div>
-			<div id="right" class="col-md-12 col-lg-6 no-padding">
-				<div class="box-img"></div>
-			</div>
-		</div>
-	</div>
-	<!-- Blok 3 -->
-	<div id="3" class="container-fluid">
-		<div class="row">
-			<div id="box" class="col-md-12 col-lg-4 no-padding red-box">
-				<div class="content white">
-					<h2> Ruilen </h2>
-					<p class="opmaat-p"> Heb je reeds een strip die in je box zit? Geen zorgen! Je kan hem makkelijk omruilen met je mede-stripliefhebbers via
-						ons forum. </p>
-					<button type="button" class="btn btn-warning red"> Ruilen </button>
-				</div>
-			</div>
-			<div id="box" class="col-md-12 col-lg-4 no-padding red-box">
-				<div class="round-img"></div>
-			</div>
-			<div id="box" class="col-md-12 col-lg-4 no-padding red-box">
-				<div class="content white">
-					<h2> Bouw een stripmuur </h2>
-					<p class="opmaat-p"> Jouw box wordt persoonlijk samengesteld. Zo kan je in je account jouw eigen stripmuur bouwen. Wil je meer info? Maak
-						dan hier je account aan. </p>
-					<button type="button" class="btn btn-warning red"> Registreren </button>
+				<div id="right" class="col-md-12 col-lg-6 no-padding">
+					<div class="box-img"></div>
 				</div>
 			</div>
 		</div>
-	</div>
+		<!-- Blok 3 -->
+		<div id="3" class="container-fluid">
+			<div class="row">
+				<div id="box" class="col-md-12 col-lg-4 no-padding red-box">
+					<div class="content white">
+						<h2> Ruilen </h2>
+						<p class="opmaat-p"> Heb je reeds een strip die in je box zit? Geen zorgen! Je kan hem makkelijk omruilen met je mede-stripliefhebbers via
+							ons forum. </p>
+						<button type="button" class="btn btn-warning red"> Ruilen </button>
+					</div>
+				</div>
+				<div id="box" class="col-md-12 col-lg-4 no-padding red-box">
+					<div class="round-img"></div>
+				</div>
+				<div id="box" class="col-md-12 col-lg-4 no-padding red-box">
+					<div class="content white">
+						<h2> Bouw een stripmuur </h2>
+						<p class="opmaat-p"> Jouw box wordt persoonlijk samengesteld. Zo kan je in je account jouw eigen stripmuur bouwen. Wil je meer info? Maak
+							dan hier je account aan. </p>
+						<button type="button" class="btn btn-warning red"> Registreren </button>
+					</div>
+				</div>
+			</div>
+		</div>
 
-	<!-- testblok
+		<!-- testblok
 <div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-6 col-md-6 col-lg-6 no-padding trapezium">
@@ -111,35 +114,44 @@
 	</div>
 	 -->
 
-	<!-- Footer -->
-	<div id="3" class="container-fluid">
-		<div class="row">
-			<div id="box" class="col-md-4 no-padding white-box">
-				<div class="content red">
-					<div class="footer-logo"> </div>
+		<!-- Footer -->
+		<div id="3" class="container-fluid">
+			<div class="row">
+				<div id="box" class="col-md-4 no-padding white-box">
+					<div class="content red">
+						<div class="footer-logo"> </div>
+					</div>
 				</div>
-			</div>
-			<div id="box" class="col-md-4 no-padding white-box">
-				<div class="content footer red">
-					<h3> Menu </h3>
-					<p><a href="#"> Home </a></p>
-					<p><a href="#1"> Over ons </a></p>
-					<p><a href="#2"> Box op maat </a></p>
-					<p><a href="#3"> Ruilen </a></p>
-					<p><a href="app">Stripmuur</a></p>
+				<div id="box" class="col-md-4 no-padding white-box">
+					<div class="content footer red">
+						<h3> Menu </h3>
+						<p><a href="#"> Home </a></p>
+						<p><a href="#1"> Over ons </a></p>
+						<p><a href="#2"> Box op maat </a></p>
+						<p><a href="#3"> Ruilen </a></p>
+						<p><a href="app">Stripmuur</a></p>
+					</div>
 				</div>
-			</div>
-			<div id="box" class="col-md-4 no-padding white-box">
-				<div class="content sm-footer red">
-					<h3> Volg ons op Social Media: </h3>
-					<a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-					<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-					<a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+				<div id="box" class="col-md-4 no-padding white-box">
+					<div class="content sm-footer red">
+						<h3> Volg ons op Social Media: </h3>
+						<a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<script src="script/script.js"></script>
+
+		<script src="script/script.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="slicknav/jquery.slicknav.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$(".nav").slicknav();
+				$(".slicknav_menu").prepend('<div class="logo"> </div>')
+			});
+		</script>
 </body>
 
 </html>
