@@ -14,14 +14,14 @@ body{
     font-family: $header-font;
   }
   h1{
-    font-size: 5em;
+    font-size: 8em;
   }
   h2{
-    font-size: 3em;
+    font-size: 4.5em;
   }
   p{
     font-family: $body-font;
-    font-size: 1em;
+    font-size: 1.3em;
   }
 }
 
@@ -122,14 +122,14 @@ body{
     
     }
         .about-img{
-      height: 500px;
+      height: 100%;
       background-image: url("../images/about.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
     }
     .box-img{
-      height: 500px;
+      height: 100%;
       background-image: url("../images/box.jpg");
       background-size: cover;
       background-repeat: no-repeat;
@@ -178,25 +178,48 @@ body{
 }
 
 
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1200px) {
 
-/*
-.trapezium {
-  width: 50%;
-  height: 500px;
-  background-image: url("../images/about.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
--webkit-clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
-clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
+ }
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) {
+  .row{
+        .about-img{
+      height: 500px;
+
+    }
+    .box-img{
+      height: 500px;
+
+    }
+
+
 }
-.trapezium2 {
-  width: 50%;
-  height: 500px;
-  background:red;
-  background-size: cover;
-  background-repeat: no-repeat;
--webkit-clip-path: polygon(0 0, 100% 0%, 100% 60%, 0% 80%);
-clip-path: polygon(0 0, 100% 0%, 100% 60%, 0% 80%);
+body{
+  h1, h2, h3{
+    font-family: $header-font;
+  }
+  h1{
+    font-size: 6em;
+  }
+  h2{
+    font-size: 3em;
+  }
+  p{
+    font-family: $body-font;
+    font-size: 1.3em;
+  }
+}
 }
 
-*/
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+
+}
