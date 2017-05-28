@@ -31,7 +31,7 @@ zoeff.components = zoeff.components || {};
                     function (snapshot) {
                         var pw = snapshot.val().password;
                         if (pw === data.password) {
-                            app.router.push('/my');
+                            app.router.push('/quiz');
                         }
                     }
                 )
