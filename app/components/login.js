@@ -5,12 +5,10 @@ zoeff.components = zoeff.components || {};
         template: '#login',
         beforeMount: function () {
             var body = document.getElementsByTagName('body')[0];
-            console.log(body);
             body.classList.add('login');
         },
          beforeDestroy: function () {
             var body = document.getElementsByTagName('body')[0];
-            console.log(body);
             body.classList.remove('login');
         },
         methods: {

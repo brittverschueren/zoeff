@@ -13,8 +13,12 @@
             <div class="logo"> </div>
             <ul class="nav">
                 <li><a href="/zoeff"> Home </a></li>
-                <li><router-link to="/my">Mine</router-link></li>
-                <li><router-link to="/add">Add</router-link></li>
+                <li>
+                    <router-link to="/my">Mine</router-link>
+                </li>
+                <li>
+                    <router-link to="/add">Add</router-link>
+                </li>
                 <div class="sm-login">
                     <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -24,15 +28,13 @@
         </div>
         <div class="mobilemenu"></div>
         <div class="container-fluid">
-            <p>
-                <!-- use router-link component for navigation. -->
-                <!-- specify the link by passing the `to` prop. -->
-                <!-- <router-link> will be rendered as an `<a>` tag by default -->
-
-            </p>
+            <!-- use router-link component for navigation. -->
+            <!-- specify the link by passing the `to` prop. -->
+            <!-- <router-link> will be rendered as an `<a>` tag by default -->
             <!-- route outlet -->
             <!-- component matched by the route will render here -->
             <router-view></router-view>
+            <!-- Footer -->
         </div>
     </div>
 
@@ -44,6 +46,31 @@
     <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
     <script>
         vex.defaultOptions.className = 'vex-theme-default'
+    </script>
+
+    <script type="x/templates" id="quiz">
+        <div>
+            <form v-on:submit="submit">
+                <div v-for="question in questions">
+                    <div class="col-xs-12">
+                        <h1>{{question.text}}</h1>
+
+                        <div v-for="answer in question.responses">
+                            <input type="radio" v-bind:name="question.text" v-bind:value="answer.value" required>
+                            <label v-if="question.type==='text'">{{answer.text}}</label>
+                            <img v-if="question.type==='image'" v-bind:src="answer.url" alt="">
+                        </div>
+
+                    </div>
+                </div>
+                <div v-if="answer">
+                    Jij bent {{answer}}.
+                    <img v-bind:img="'images/'+answer+'.png'" v-bind:alt="answer">
+                    <router-link to="/my" tag="button" class="btn btn-default" type="button">Ga naar jouw stripmuur</router-link>
+                </div>
+                <button class="btn btn-danger" type="submit">Indienen</button>
+            </form>
+        </div>
     </script>
 
     <script type="x/templates" id="strip-items">
@@ -112,10 +139,8 @@
 
     <script type="x/templates" id="login">
         <div class="login-form col-sm-3 col-md-3 col-lg-3 ">
-
-
             <form class="form-horizontal" v-on:submit="login">
-                <h1> Login </h1>
+                <h1> Aanmelden </h1>
                 <div class="form-group">
                     <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
                     <input type="password" class="form-control" name="wachtwoord" placeholder="Wachtwoord" required="" />
@@ -123,11 +148,12 @@
                 <div class="form-group">
                     <div class="col-sm-offset-2">
                         <button type="submit" class="btn btn-danger">Aanmelden</button>
-                        <router-link to="/register">Registreren</router-link>
+                        <router-link to="/register" class="btn btn-secondary">Registreren</router-link>
                     </div>
                 </div>
             </form>
         </div>
+
     </script>
 
     <script type="x/templates" id="register">
@@ -135,48 +161,51 @@
             <form class="form-horizontal" v-on:submit="register">
                 <h1> Registreren </h1>
                 <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="naam" class=" col-sm-5 control-label">Naam*</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="naam" placeholder="Naam" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="voornaam" class=" col-sm-5 control-label">Voornaam*</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="voornaam" placeholder="Voornaam" required>
-                            </div>
-                        </div>
+                    <div class="col-sm-10">
+                        <h5> Naam: </h5>
+                        <input type="text" class="form-control" id="naam" placeholder="Naam" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="gebruikersnaam" class=" col-sm-10 control-label">Gebruikersnaam*</label>
                     <div class="col-sm-10">
+                        <h5> Voornaam*: </h5>
+                        <input type="text" class="form-control" id="voornaam" placeholder="Voornaam" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <h5> Gebruikersnaam*: </h5>
                         <input type="text" class="form-control" id="gebruikersnaam" placeholder="Gebruikersnaam" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="emailadres" class=" col-sm-10 control-label">E-mailadres*</label>
                     <div class="col-sm-10">
+                        <h5> E-mailadres*: </h5>
                         <input type="email" class="form-control" id="emailadres" placeholder="E-mailadres" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="wachtwoord" class=" col-sm-10 control-label">Wachtwoord*</label>
                     <div class="col-sm-10">
+                        <h5> Wachtwoord*: </h5>
                         <input type="password" class="form-control" id="wachtwoord" placeholder="Wachtwoord" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="telefoon" class=" col-sm-10 control-label">Telefoonnummer*</label>
                     <div class="col-sm-10">
+                        <h5> Telefoonnummer*: </h5>
                         <input type="tel" class="form-control" id="telefoon" placeholder="Telefoonnummer" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <h5> Bonus vraag: Wat is jouw favoriete stripboek aller tijden?: </h5>
+                        <input type="text" class="form-control" id="favorite" placeholder="Favoriete stripboek aller tijden">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-danger">Registreren</button>
+                        <router-link to="/login" class="btn btn-secondary">Aanmelden</router-link>
                     </div>
                 </div>
             </form>
@@ -185,12 +214,14 @@
 
     <script src="helpers/firebase.js"></script>
     <script src="helpers/update-all-strips.js"></script>
+    <script src="components/quiz.js"></script>
     <script src="components/all-strips.js"></script>
     <script src="components/my-strips.js"></script>
     <script src="components/strip-wall.js"></script>
     <script src="components/strip-items.js"></script>
     <script src="components/login.js"></script>
     <script src="components/register.js"></script>
+    <script src="js/questions.js"></script>
     <script src="js/strips.js"></script>
     <script src="js/app.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>

@@ -1,182 +1,218 @@
-$fa-font-path: "../../fonts";
-@import "bootstrap.override.scss";
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
-@import "../node_modules/vex-js/sass/vex-theme-default.sass";
-@import "../node_modules/vex-js/sass/vex.sass";
-@import "../../scss/font-awesome.scss";
+        $fa-font-path: "../../fonts";
+        @import "bootstrap.override.scss";
+        @import "../node_modules/bootstrap/scss/bootstrap.scss";
+        @import "../node_modules/vex-js/sass/vex-theme-default.sass";
+        @import "../node_modules/vex-js/sass/vex.sass";
+        @import "../../scss/font-awesome.scss";
+        $a :160px;
+        $header-font: 'Bangers';
+        @mixin fixed-size($width, $height) {
+            min-width: $width;
+            width: $width;
+            max-width: $width;
+            min-height: $height;
+            height: $height;
+            max-height: $height;
+        }
 
-$a :160px;
-$header-font: 'Bangers';
-
-@mixin fixed-size($width, $height) {
-  min-width: $width;
-  width: $width;
-  max-width: $width;
-  min-height: $height;
-  height: $height;
-  max-height: $height;
-}
-
-.strip-items{
-    >.strip-item{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 15px;
-        &.landscape{
-            @media only screen and (max-width: 500px) {
-                @include fixed-size($a*2,$a);
+        .strip-items {
+            >.strip-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 15px;
+                &.landscape {
+                    @media only screen and (max-width: 500px) {
+                        @include fixed-size($a*2, $a);
+                    }
+                    @include fixed-size($a*4, $a*2);
+                }
+                &.portrait {
+                    @media only screen and (max-width: 500px) {
+                        @include fixed-size($a, $a);
+                    }
+                    @include fixed-size($a*2, $a*2);
+                }
+                img {
+                    height: 100%;
+                }
             }
-            @include fixed-size($a*4,$a*2);
         }
-        &.portrait{
-            @media only screen and (max-width: 500px) {
-                @include fixed-size($a,$a);
+
+        body {
+            h1,
+            h2,
+            h3,
+            h4 {
+                font-family: $header-font;
             }
-            @include fixed-size($a*2,$a*2);
-        }
-        img{
-            height: 100%;
-        }
-    }
-}
-body{
-    h1, h2, h3, h4{
-        font-family: $header-font;
-    }
-    #app{
-        .container-fluid{
-            p{
-                margin-top: 20px;
-                    a{
-                        color:white;
-                        padding: 10px;
-                        background-color: $red;
+            #app {
+                .container-fluid {
+                    p {
+                        margin-top: 20px;
+                        a {
+                            color: white;
+                            padding: 10px;
+                            background-color: $red;
+                        }
                     }
                 }
             }
         }
-    }
 
-.login{
-    margin: auto;
-    background-image: url(../images/login.png);
-    .login-form{
-       
-    }
-        form{
-            &.form-horizontal{
-                max-width: 280px;
-                margin: 60px auto 10px;
-                input{
-                    &.form-control{
-                    position: relative;
-                    font-size: 16px;
-                    height: auto;
-                    padding: 10px;
-                      margin-bottom: -1px;
-     border-top: 1px solid transparent;
-     border-right: 1px solid transparent;
-     border-left: 1px solid transparent;
-     box-shadow: none;
-	  border-radius: 3px 3px 0px 0px;
+        .registreren {
+            .register {
+                form {
+                    &.form-horizontal {
+                        max-width: 700px;
+                        &.form-control {
+                            border: 1px solid rgba(0, 0, 0, 0.15);
+                        }
                     }
                 }
             }
         }
-}
 
-.strip-items{
-    &.row{
-        .stripmuur{
-            height: 60%;
-            width: 60%;
+        .login,
+        .registreren {
+            margin: auto;
+            background-image: url(../images/login.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            h1 {
+                color: $red;
+                text-align: center;
+                margin: 20px auto;
+            }
+            .btn {
+                margin-top: 5px;
+                text-align: center;
+            }
+            .login-form {}
+            form {
+                &.form-horizontal {
+                    max-width: 500px;
+                    margin: 60px auto 10px;
+                    background: white;
+                    padding: 50px 50px;
+                    border-radius: 20px;
+                    background: $white;
+                    input {
+                        .form-group {
+                            &.form-control {
+                                position: relative;
+                                font-size: 16px;
+                                height: auto;
+                                padding: 10px;
+                                border-top: 1px solid transparent;
+                                border-right: 1px solid transparent;
+                                border-left: 1px solid transparent;
+                                box-shadow: none;
+                                border-radius: 3px 3px 0px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .strip-items {
+            &.row {
+                .stripmuur {
+                    height: 60%;
+                    margin: auto;
+                }
+            }
+        }
+
+        .navigatie {
+            // z-index: 100;
+            //position: fixed;
+            text-align: left;
+            background-color: $red;
+            width: 100%;
+            display: flex;
+            .logo {
+                background-image: url("../images/logo-white.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 50px;
+                width: 10%;
+                margin: auto;
+            }
+            .nav {
+                display: inline-block;
+                width: 100%;
+                font-size: 1.4em;
+                margin-left: auto;
+                align-self: center;
+                margin-right: auto;
+                li {
+                    display: inline;
+                }
+                a {
+                    text-decoration: none;
+                    color: $white;
+                    font-family: 'Bangers';
+                    padding: 0 1em;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                .sm-login {
+                    float: right;
+                    color: $white;
+                    a {
+                        padding: 0 0.5em;
+                    }
+                }
+            }
+        }
+
+        .container-fluid {
+            .login-form {
+                margin: auto;
+                max-width: 100%;
+            }
+        }
+
+        .slicknav_menu {
+            display: none;
+        }
+
+        .logo {
+            background-image: url("../images/logo-white.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100px;
+            width: 100px;
+            float: left;
             margin: auto;
         }
-    }
-}
 
-.navigatie{
- // z-index: 100;
-  //position: fixed;
-  text-align:left;
-  background-color:$red;
-  width:100%;
-  display:flex;
-    .logo{
-    background-image:url("../images/logo-white.png");
-    background-size:contain;
-    background-repeat:no-repeat;
-    background-position:center;
-    height:50px;
-    width:10%;
-    margin:auto;
-    }
-    .nav{
-      display:inline-block;
-      width:100%;
-      font-size:1.4em;
-      margin-left: auto;
-      align-self: center;
-      margin-right: auto;
-      li{
-        display: 	inline;
-      }
-        a{
-          text-decoration:none;
-          color:$white;
-          font-family: 'Bangers';
-          padding: 0 1em;
-        }
-        a:hover{
-        text-decoration: underline;
-        }
-        .sm-login{
-          float:right;
-          color:$white;
-          a{
-            padding: 0 0.5em;
-          }
-        }
-    }
-}
-.slicknav_menu {
-		display:none;
-	}
-
-    .logo{
-    background-image:url("../images/logo-white.png");
-    background-size:contain;
-    background-repeat:no-repeat;
-    background-position:center;
-    height:100px;
-    width: 100px;
-    float: left;
-    margin:auto;
-    }
-
-@media (max-width: 768px) {
-  .navigatie{
-     display:none;
-  }
-
-    .mobilemenu{
-        .slicknav_menu {
-        display:block;
-        background-color: $red;
-          a{
-            background-color: $red;
-            font-family: $header-font;
-            font-size: 2.5em;
-            text-align: center;
-          }
-          .sm-login{
-            a{
-              i{
-              display: none;
+        @media (max-width: 768px) {
+            .navigatie {
+                display: none;
             }
-          }
-      }
-    }
-  }
-}
+            .mobilemenu {
+                .slicknav_menu {
+                    display: block;
+                    background-color: $red;
+                    a {
+                        background-color: $red;
+                        font-family: $header-font;
+                        font-size: 2.5em;
+                        text-align: center;
+                    }
+                    .sm-login {
+                        a {
+                            i {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }

@@ -6,6 +6,7 @@ var zoeff = zoeff || {};
         { path: '/add', component: app.components.allStrips },
         { path: '/login', component: app.components.login },
         { path: '/register', component: app.components.register },
+        { path: '/quiz', component: app.components.quiz },
     ]
 
     var router = new VueRouter({

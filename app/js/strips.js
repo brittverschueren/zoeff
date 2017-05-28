@@ -1,7 +1,6 @@
 var zoeff = zoeff || {};
 (function (app) {
-    app.allStrips = [
-        {
+    app.allStrips = [{
             id: 1,
             name: 'Suske en Wiske',
             image: 'suskeenwiske.png',
@@ -61,9 +60,32 @@ var zoeff = zoeff || {};
         },
     ];
 
-    var userStripsString = localStorage.getItem('user-strips');
 
-    app.userStrips = !!userStripsString ? JSON.parse(userStripsString) : [];
+    app.loadStrips = function () {
+        var userStripsString = localStorage.getItem('user-strips');
+        return !!userStripsString ? JSON.parse(userStripsString) : [];
+    }
+
+    app.userStrips = app.loadStrips();
+
+    app.saveQuizToWall = function (personages) {
+        var strips = _.map(personages, function (personage) {
+            switch (personage) {
+                case 'Flip':
+                    return app.allStrips[1];
+                case 'Wiske':
+                    return app.allStrips[0];
+                case 'Marcel':
+                    return app.allStrips[7];
+                default:
+                    return undefined;
+            }
+        }).filter(function (q) {
+            return !!q
+        });
+        app.saveStrips(strips);
+        app.userStrips = app.loadStrips();
+    }
 
     app.saveStrips = function (userStrips) {
         localStorage.setItem('user-strips', JSON.stringify(userStrips));
