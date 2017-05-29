@@ -55,18 +55,16 @@
                 <div v-for="question in questions">
                     <div class="col-xs-12 question">
                         <h3>{{question.text}}</h3>
-
                         <div v-for="answer in question.responses" class="answer">
-                            <label v-if="question.type==='text'">
+                            <label class="label-text" v-if="question.type==='text'">
                                   <input  v-if="question.type==='text'" type="radio" v-bind:name="question.text" v-bind:value="answer.value" required>
                                     {{answer.text}}</label>
                             </label>
-                            <label>
+                            <label class="image-label">
                             <input v-if="question.type==='image'" type="radio" v-bind:name="question.text" v-bind:value="answer.value" required>
                             <img v-if="question.type==='image'" v-bind:src="answer.url" alt="" class="answer-image">
                             </label>
                         </div>
-
                     </div>
                 </div>
                 <button class="btn btn-danger" type="submit">Indienen</button>

@@ -3,6 +3,7 @@ var zoeff = zoeff || {};
     app.questions = [{
             text: 'Kies een kleur',
             type: 'image',
+            orientation: 'landscape',
             responses: [{
                     text: 'Rood',
                     value: 'Wiske',
@@ -22,53 +23,44 @@ var zoeff = zoeff || {};
         },
         {
             text: 'Beschrijf je persoonlijkheid in 1 woord',
-            type: 'text',
+            type: 'image',
+            orientation: 'portrait',
             responses: [{
                     text: 'Trouw',
-                    value: 'Marcel'
+                    value: 'Marcel',
+                    url: 'images/trouw.png'
                 },
                 {
                     text: 'Hulpvaardig',
-                    value: 'Flip'
+                    value: 'Flip',
+                    url: 'images/hulpvaardig.png'
                 },
                 {
                     text: 'Bezorgd',
-                    value: 'Marcel'
+                    value: 'Marcel',
+                    url: 'images/bezorgd.png'
                 },
                 {
                     text: 'Intelligent',
-                    value: 'Wiske'
+                    value: 'Wiske',
+                    url: 'images/intelligent.png'
                 },
                 {
                     text: 'Eigenwijs',
-                    value: 'Flip'
+                    value: 'Flip',
+                    url: 'images/eigenwijs.png'
                 },
                 {
                     text: 'Nieuwsgierig',
-                    value: 'Wiske'
-                },
-            ]
-        },
-        {
-            text: 'Hoe reageer jij in een probleemsituatie?',
-            type: 'text',
-            responses: [{
-                    text: 'Ik houd het hoofd koel en probeer een goede oplossing te vinden.',
-                    value: 'Flip'
-                },
-                {
-                    text: 'Ik probeer meteen het probleem op te lossen, wat soms wel tot meer problemen kan leiden.',
-                    value: 'Marcel'
-                },
-                {
-                    text: 'Ik zoek eerst uit hoe het probleem gekomen is en zoek daarna pas een oplossing ',
-                    value: 'Wiske'
+                    value: 'Wiske',
+                    url: 'images/nieuwsgierig.png'
                 },
             ]
         },
         {
             text: 'Met wie zou je het meest rondhangen?',
             type: 'image',
+            orientation: 'landscape',
             responses: [{
                     text: 'Suske',
                     value: 'Wiske',
@@ -87,8 +79,30 @@ var zoeff = zoeff || {};
             ]
         },
         {
+            text: 'Hoe reageer jij in een probleemsituatie?',
+            type: 'image',
+            orientation: 'portrait',
+            responses: [{
+                    text: 'Ik houd het hoofd koel en probeer een goede oplossing te vinden.',
+                    value: 'Flip',
+                    url: 'images/hoofdkoel.png'
+                },
+                {
+                    text: 'Ik probeer meteen het probleem op te lossen, wat soms wel tot meer problemen kan leiden.',
+                    value: 'Marcel',
+                    url: 'images/problemen.png'
+                },
+                {
+                    text: 'Ik zoek eerst uit hoe het probleem gekomen is en zoek daarna pas een oplossing ',
+                    value: 'Wiske',
+                    url: 'images/probleemuitzoeken.png'
+                },
+            ]
+        },
+        {
             text: 'Kies een Emoji',
             type: 'image',
+            orientation: 'landscape',
             responses: [{
                     text: 'Kuikentje',
                     value: 'Flip',

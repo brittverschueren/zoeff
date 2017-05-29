@@ -202,8 +202,25 @@
             div {
                 .question {
                     .answer {
+                        display: inline;
+                        label>input:checked+img {
+                            /* (RADIO CHECKED) IMAGE STYLES */
+                            border: 5px solid $red;
+                            border-radius: 100%;
+                        }
+                        label {
+                            &.image-label {
+                                display: inline;
+                                input{
+                                    display: none;
+                                }
+                            }
+                            &.label-text {
+                                display: block;
+                            }
+                        }
                         .answer-image {
-                            width: 10%;
+                            width: 20%;
                         }
                     }
                 }
