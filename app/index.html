@@ -14,10 +14,10 @@
             <ul class="nav">
                 <li><a href="/zoeff"> Home </a></li>
                 <li>
-                    <router-link to="/my">Mine</router-link>
+                    <router-link to="/my">Mijn stripmuur</router-link>
                 </li>
                 <li>
-                    <router-link to="/add">Add</router-link>
+                    <router-link to="/add">Strips toevoegen</router-link>
                 </li>
                 <div class="sm-login">
                     <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
@@ -90,6 +90,7 @@
 
     <script type="x/templates" id="strip-wall">
         <div class="strip-items row">
+            <h1> De stripmuur van Britt </h1>
             <svg class="stripmuur" x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===1">
                 <rect class="strip-1" width="1920" height="1080" v-bind:style="{fill:strips[0].color}" />
                 <image class="strip-1" v-bind:href="'images/'+strips[0].image" x="240" y="135" height="825px" width="1500px"></image>

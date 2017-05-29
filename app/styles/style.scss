@@ -16,6 +16,7 @@
         }
 
         .strip-items {
+            margin: 5% 0 5% 0;
             >.strip-item {
                 display: flex;
                 align-items: center;
@@ -36,6 +37,11 @@
                 img {
                     height: 100%;
                 }
+            }
+            h1 {
+                margin: auto auto 2% auto;
+                color: $red;
+                text-align: center;
             }
         }
 
@@ -119,7 +125,7 @@
         .strip-items {
             &.row {
                 .stripmuur {
-                    height: 60%;
+                    height: 50%;
                     margin: auto;
                 }
             }
@@ -199,20 +205,19 @@
                         .answer-image {
                             width: 10%;
                         }
-                        
                     }
                 }
             }
-             .results {
-                    img {
-                        &.result-image {
-                            width: 30%;
-                        }
-                    }
-                    button{
-                        display: block;
+            .results {
+                img {
+                    &.result-image {
+                        width: 30%;
                     }
                 }
+                button {
+                    display: block;
+                }
+            }
         }
 
         @media (max-width: 768px) {
