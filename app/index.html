@@ -50,25 +50,31 @@
 
     <script type="x/templates" id="quiz">
         <div>
+            <h1> Welk stripfiguur ben jij? </h1>
             <form v-on:submit="submit">
                 <div v-for="question in questions">
-                    <div class="col-xs-12">
-                        <h1>{{question.text}}</h1>
+                    <div class="col-xs-12 question">
+                        <h3>{{question.text}}</h3>
 
-                        <div v-for="answer in question.responses">
-                            <input type="radio" v-bind:name="question.text" v-bind:value="answer.value" required>
-                            <label v-if="question.type==='text'">{{answer.text}}</label>
-                            <img v-if="question.type==='image'" v-bind:src="answer.url" alt="">
+                        <div v-for="answer in question.responses" class="answer">
+                            <label v-if="question.type==='text'">
+                                  <input  v-if="question.type==='text'" type="radio" v-bind:name="question.text" v-bind:value="answer.value" required>
+                                    {{answer.text}}</label>
+                            </label>
+                            <label>
+                            <input v-if="question.type==='image'" type="radio" v-bind:name="question.text" v-bind:value="answer.value" required>
+                            <img v-if="question.type==='image'" v-bind:src="answer.url" alt="" class="answer-image">
+                            </label>
                         </div>
 
                     </div>
                 </div>
-                <div v-if="answer">
-                    Jij bent {{answer}}.
-                    <img v-bind:img="'images/'+answer+'.png'" v-bind:alt="answer">
+                <button class="btn btn-danger" type="submit">Indienen</button>
+                <div v-if="answer" class="results">
+                    <h2>Jij bent {{answer}}.</h2>
+                    <img v-bind:src="'images/'+answer+'.png'" v-bind:alt="answer" class="result-image">
                     <router-link to="/my" tag="button" class="btn btn-default" type="button">Ga naar jouw stripmuur</router-link>
                 </div>
-                <button class="btn btn-danger" type="submit">Indienen</button>
             </form>
         </div>
     </script>

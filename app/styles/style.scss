@@ -192,6 +192,29 @@
             margin: auto;
         }
 
+        form {
+            div {
+                .question {
+                    .answer {
+                        .answer-image {
+                            width: 10%;
+                        }
+                        
+                    }
+                }
+            }
+             .results {
+                    img {
+                        &.result-image {
+                            width: 30%;
+                        }
+                    }
+                    button{
+                        display: block;
+                    }
+                }
+        }
+
         @media (max-width: 768px) {
             .navigatie {
                 display: none;

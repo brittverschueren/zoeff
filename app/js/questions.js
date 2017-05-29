@@ -5,15 +5,18 @@ var zoeff = zoeff || {};
             type: 'image',
             responses: [{
                     text: 'Rood',
-                    value: 'Wiske'
+                    value: 'Wiske',
+                    url: 'images/red.png'
                 },
                 {
-                    text: 'Bruin',
-                    value: 'Marcel'
+                    text: 'Zwart',
+                    value: 'Marcel',
+                    url: 'images/black.png'
                 },
                 {
                     text: 'Groen',
-                    value: 'Flip'
+                    value: 'Flip',
+                    url: 'images/green.png'
                 },
             ]
         },
@@ -68,15 +71,18 @@ var zoeff = zoeff || {};
             type: 'image',
             responses: [{
                     text: 'Suske',
-                    value: 'Wiske'
+                    value: 'Wiske',
+                    url: 'images/suske.png'
                 },
                 {
                     text: 'Jommeke',
-                    value: 'Flip'
+                    value: 'Flip',
+                    url: 'images/jommeke1.png'
                 },
                 {
                     text: 'Charlotte Kiekeboe',
-                    value: 'Marcel'
+                    value: 'Marcel',
+                    url: 'images/charlotte.png'
                 },
             ]
         },
@@ -85,27 +91,33 @@ var zoeff = zoeff || {};
             type: 'image',
             responses: [{
                     text: 'Kuikentje',
-                    value: 'Flip'
+                    value: 'Flip',
+                    url: 'images/flip-emoji.png'
                 },
                 {
                     text: 'Hartjes ogen',
-                    value: 'Marcel'
+                    value: 'Marcel',
+                    url: 'images/marcel-emoji.png'
                 },
                 {
                     text: 'Strikje',
-                    value: 'Wiske'
+                    value: 'Wiske',
+                    url: 'images/wiske-emoji.png'
                 },
                 {
                     text: 'Hartjeskus',
-                    value: 'Marcel'
+                    value: 'Marcel',
+                    url: 'images/marcel-emoji2.png'
                 },
                 {
                     text: 'Bloem',
-                    value: 'Wiske'
+                    value: 'Wiske',
+                    url: 'images/wiske-emoji2.png'
                 },
                 {
                     text: 'Lachend gezichtje',
-                    value: 'Flip'
+                    value: 'Flip',
+                    url: 'images/flip-emoji2.png'
                 },
             ]
         },
