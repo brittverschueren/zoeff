@@ -16,7 +16,11 @@
         }
 
         .strip-items {
-            margin: 5% 0 5% 0;
+            margin: 5% auto 5% auto;
+            width: 60%;
+            .stripmuur {
+                height: 0%;
+            }
             >.strip-item {
                 display: flex;
                 align-items: center;
@@ -94,7 +98,6 @@
                 margin-top: 5px;
                 text-align: center;
             }
-            
             form {
                 &.form-horizontal {
                     max-width: 500px;
@@ -118,15 +121,6 @@
                             }
                         }
                     }
-                }
-            }
-        }
-
-        .strip-items {
-            &.row {
-                .stripmuur {
-                    height: 50%;
-                    margin: auto;
                 }
             }
         }
@@ -198,42 +192,41 @@
             margin: auto;
         }
 
-        form {
-            div {
-                .question {
-                    .answer {
-                        display: inline;
-                        label>input:checked+img {
-                            /* (RADIO CHECKED) IMAGE STYLES */
-                            border: 5px solid $red;
-                            border-radius: 100%;
-                        }
-                        label {
-                            &.image-label {
-                                display: inline;
-                                input{
-                                    display: none;
-                                }
-                            }
-                            &.label-text {
-                                display: block;
+        div {
+            .question {
+                .answer {
+                    display: inline;
+                    label>input:checked+img {
+                        /* (RADIO CHECKED) IMAGE STYLES */
+                        border: 1px solid $red;
+                        border-radius: 100%;
+                    }
+                    label {
+                        &.image-label {
+                            display: inline;
+                            input {
+                                display: none;
                             }
                         }
-                        .answer-image {
-                            width: 20%;
+                        &.label-text {
+                            display: block;
                         }
+                    }
+                    .answer-image {
+                        width: 10%;
                     }
                 }
             }
-            .results {
-                img {
-                    &.result-image {
-                        width: 30%;
-                    }
+        }
+
+        .results {
+            img {
+                &.result-image {
+                    width: 30%;
                 }
-                button {
-                    display: block;
-                }
+            }
+            button {
+                display: block;
             }
         }
 
@@ -260,4 +253,16 @@
                     }
                 }
             }
+            .strip-items {
+                width: 100%;
+            }
+            
+        }
+
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+           .strip-items {
+            .stripmuur {
+                height: 500px;
+            }
+           }
         }
