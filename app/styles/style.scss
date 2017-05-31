@@ -87,8 +87,7 @@
         .registreren {
             margin: auto;
             background-image: url(../images/login.png);
-            background-size: cover;
-            background-repeat: no-repeat;
+            background-size: inherit;
             h1 {
                 color: $red;
                 text-align: center;
