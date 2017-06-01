@@ -16,10 +16,10 @@
             <div class="logo"> </div>
             <ul class="nav">
                 <li><a href="/zoeff"> Home </a></li>
-                <li>
+                <li v-if="$route.path!=='/login' && $route.path!=='/register'">
                     <router-link to="/my">Mijn stripmuur</router-link>
                 </li>
-                <li>
+                <li v-if="$route.path!=='/login' && $route.path!=='/register'">
                     <router-link to="/add">Strips toevoegen</router-link>
                 </li>
                 <div class="sm-login">
@@ -51,7 +51,7 @@
         vex.defaultOptions.className = 'vex-theme-default'
     </script>
 
-     <script type="x/templates" id="quiz">
+    <script type="x/templates" id="quiz">
         <div>
             <h1> Welk stripfiguur ben jij? </h1>
             <form v-on:submit="submit">
