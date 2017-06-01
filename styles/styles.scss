@@ -132,6 +132,9 @@ body {
     .opmaat-p {
       text-align: left;
     }
+    iframe{
+    padding: 5%;
+  }
   }
   .about-img {
     height: 100%;
@@ -171,16 +174,7 @@ body {
   }
 }
 
-.sm-footer {
-  i {
-    font-size: 4em;
-    color: $red;
-    padding: 25px 10px;
-  }
-  i:hover {
-    color: rgba($red, 0.8);
-  }
-}
+
 
 .footer-logo {
   background-image: url("../images/logo.png");
@@ -234,11 +228,6 @@ body {
     }
   }
 
-  .sm-footer {
-    i {
-      display: block;
-    }
-  }
 }
 // Medium devices (tablets, 768px and up)
 @media (max-width: 768px) {
