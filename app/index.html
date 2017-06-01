@@ -22,6 +22,13 @@
                 <li v-if="$route.path!=='/login' && $route.path!=='/register'">
                     <router-link to="/add">Strips toevoegen</router-link>
                 </li>
+                <li v-if="$route.path!=='/login' && $route.path!=='/register'">
+                    <a href="/" v-on:click="logout">Afmelden</a>
+                </li>
+                <li v-if="$route.path!=='/login' && $route.path!=='/register'">
+                    <a>Hallo {{username}}</a>
+                </li>
+
                 <div class="sm-login">
                     <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -91,7 +98,7 @@
 
     <script type="x/templates" id="strip-wall">
         <div class="strip-items row">
-            <h1> De stripmuur van Britt </h1>
+            <h1> De stripmuur van {{username}}</h1>
             <svg class="stripmuur" x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===1">
                 <rect class="strip-1" width="1920" height="1080" v-bind:style="{fill:strips[0].color}" />
                 <image class="strip-1" v-bind:xlink:href="'images/'+strips[0].image" x="240" y="135" height="825px" width="1500px"></image>
@@ -222,6 +229,7 @@
 
     <script src="helpers/firebase.js"></script>
     <script src="helpers/update-all-strips.js"></script>
+    <script src="js/strips.js"></script>
     <script src="components/quiz.js"></script>
     <script src="components/all-strips.js"></script>
     <script src="components/my-strips.js"></script>
@@ -230,7 +238,6 @@
     <script src="components/login.js"></script>
     <script src="components/register.js"></script>
     <script src="js/questions.js"></script>
-    <script src="js/strips.js"></script>
     <script src="js/app.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="../slicknav/jquery.slicknav.js"></script>

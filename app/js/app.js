@@ -34,6 +34,18 @@ var zoeff = zoeff || {};
 
     var vueApp = new Vue({
         router: router,
+        data: function () {
+            var self = this;
+            app.getUsername(function (un) {
+                self.username = un;
+            });
+            return {
+                username: app.getUsername()
+            }
+        },
+        methods: {
+            logout: app.logout
+        }
     }).$mount('#app');
 
     Vue.use(VueFire);

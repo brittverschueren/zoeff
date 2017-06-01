@@ -1,4 +1,4 @@
-(function () {
+(function (app) {
     attachclicks = function (el, strips, clickstriphandler) {
         _.forEach(strips, function (strip, index) {
             var className = 'strip-' + (index + 1);
@@ -25,7 +25,17 @@
         updated: function () {
             attachclicks(this.$el, this.strips, this.click)
         },
+        data: function () {
+            var self = this;
+            app.getUsername(function (un) {
+                self.username = un;
+                console.log(un)
+            });
+            return {
+                username: app.getUsername()
+            }
+        },
         props: ['strips', 'click'],
         template: '#strip-wall',
     });
-})();
+})(zoeff);

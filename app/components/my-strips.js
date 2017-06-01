@@ -3,15 +3,25 @@ zoeff.components = zoeff.components || {};
 (function (app) {
     app.components.myStrips = Vue.component('myStrips', {
         data: function () {
-            return { userStrips: app.userStrips };
+            var self = this;
+            app.stripsChange = function () {
+                self.userStrips = app.userStrips;
+            }
+            return {
+                userStrips: app.userStrips
+            };
         },
         methods: {
             deleteStrip: function (strip) {
                 vex.dialog.open({
                     message: 'Bent u zeker dat u ' + strip.name + ' wil verwijderen?',
                     buttons: [
-                        _.extend({}, vex.dialog.buttons.YES, { text: 'Ja' }),
-                        _.extend({}, vex.dialog.buttons.NO, { text: 'Nee' })
+                        _.extend({}, vex.dialog.buttons.YES, {
+                            text: 'Ja'
+                        }),
+                        _.extend({}, vex.dialog.buttons.NO, {
+                            text: 'Nee'
+                        })
                     ],
                     callback: function (data) {
                         if (data) {

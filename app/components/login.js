@@ -32,6 +32,7 @@ zoeff.components = zoeff.components || {};
                             var pw = val.password;
 
                             if (pw === data.password) {
+                                app.login(data.username);
                                 app.router.push('/my');
                             } else {
                                 alert('Gebruikersnaam of wachtwoord fout');
