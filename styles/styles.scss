@@ -115,6 +115,9 @@ body {
     padding-right: 0;
     padding-left: 0;
   }
+  .map{
+      text-align: center;
+    }
   #box {
     height: auto;
     &.red-box {
@@ -220,9 +223,7 @@ body {
       height: auto;
       text-align: center;
     }
-    .map{
-      text-align: center;
-    }
+    
   }
 }
 
