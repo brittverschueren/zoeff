@@ -132,9 +132,9 @@ body {
     .opmaat-p {
       text-align: left;
     }
-    iframe{
-    padding: 5%;
-  }
+    iframe {
+      padding: 5%;
+    }
   }
   .about-img {
     height: 100%;
@@ -174,8 +174,6 @@ body {
   }
 }
 
-
-
 .footer-logo {
   background-image: url("../images/logo.png");
   background-size: contain;
@@ -185,13 +183,13 @@ body {
   margin: auto;
 }
 
-
-
 .slicknav_menu {
   display: none;
 }
+
 // Extra large devices (large desktops, 1200px and up)
 @media (max-width: 1200px) {}
+
 // Large devices (desktops, 992px and up)
 @media (max-width: 992px) {
   body {
@@ -211,7 +209,6 @@ body {
       font-size: 1.3em;
     }
   }
-
   .row {
     .about-img {
       height: 500px;
@@ -221,14 +218,15 @@ body {
     }
     #box {
       height: auto;
-      .about-p,
-      .opmaat-p {
-        text-align: center;
-      }
+      text-align: center;
+    }
+    .map{
+      text-align: center;
     }
   }
-
 }
+
+
 // Medium devices (tablets, 768px and up)
 @media (max-width: 768px) {
   .navigatie {
