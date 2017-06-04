@@ -24,10 +24,10 @@
             width: 80%;
             margin: auto;
             h1 {
-                font-size: 6em;
+                font-size: 4em;
                 color: $red;
                 text-align: center;
-                margin-bottom: 50px;
+                margin: 50px 0px;
             }
             h2 {
                 font-size: 2em;
@@ -70,13 +70,17 @@
             width: 80%;
             margin: auto;
             h1 {
-                font-size: 6em;
+                font-size: 4em;
                 color: $red;
                 text-align: center;
+                margin: 50px 0px;
             }
             h3 {
                 font-size: 1.5em;
                 font-family: $body-font;
+            }
+            p{
+                font-size: 1.3em;
             }
             .row {
                 .form-post {
@@ -93,6 +97,11 @@
                 .forum-image {
                     width: 60%;
                     margin-bottom: 20px;
+                }
+                .filter{
+                    h2{
+                        color:$red;
+                    }
                 }
                 .forum-filter {
                     padding: 5px;
