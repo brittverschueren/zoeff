@@ -23,13 +23,16 @@
                     <router-link to="/add">Strips toevoegen</router-link>
                 </li>
                 <li v-if="$route.path!=='/login' && $route.path!=='/register'">
-                    <a href="/" v-on:click="logout">Afmelden</a>
+                    <router-link to="/forum">Ruilen</router-link>
                 </li>
-                <li v-if="$route.path!=='/login' && $route.path!=='/register'">
+                <!--<li v-if="$route.path!=='/login' && $route.path!=='/register'">
                     <a>Hallo {{username}}</a>
-                </li>
+                </li>-->
 
                 <div class="sm-login">
+                    <li v-if="$route.path!=='/login' && $route.path!=='/register'">
+                        <a href="/zoeff" v-on:click="logout">Afmelden</a>
+                    </li>
                     <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                     <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
@@ -53,7 +56,6 @@
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/vue-router"></script>
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
-    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
     <script>
         vex.defaultOptions.className = 'vex-theme-default'
     </script>
@@ -80,13 +82,51 @@
                 <button class="btn btn-danger" type="submit">Indienen</button>
                 <div v-if="answer" class="results">
                     <h2>Jij bent {{answer}}.</h2>
-                    <img v-bind:src="'images/'+answer+'.png'" v-bind:alt="answer" class="result-image">
+                    <img v-bind:src="'images/quiz/'+answer+'.png'" v-bind:alt="answer" class="result-image">
                     <router-link to="/my" tag="button" class="btn btn-default" type="button">Ga naar jouw stripmuur</router-link>
                 </div>
             </form>
         </div>
     </script>
+    <script type="x/templates" id="forum">
+        <div class="forum">
+            <h1> Strips ruilen? </h1>
+            <!--<h3> Heb je reeds een strip die in jouw box zat? Dan ben je hier aan het juiste adres! In dit forum kan je jouw dubbele
+                strips ruilen tegen andere stripliefhebbers. </h3>-->
 
+            <div class="row">
+                <div class="col-md-7">
+
+                    <div v-bind:class="post.type" class="row form-post" v-for="post in posts">
+                        <div class="col-md-4">
+                            <img class="forum-image" v-bind:src="'images/forum/'+ post.image">
+                            <h4> {{post.user}} - {{post.date}}</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <h2> {{post.title}}</h2>
+                            <p> {{post.text}} </p>
+                            <router-link to="/post" tag="button" v-bind:class="post.button" class="btn" type="button">Lees meer </router-link>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 push-md-1">
+                    <h2> Filteren </h2>
+                    <div class="row">
+                        <div class="col-md-4 forum-filter"> <img src="images/filters/suskeenwiske.png"> </div>
+                        <div class="col-md-4 forum-filter"> <img src="images/filters/jommeke.png"> </div>
+                        <div class="col-md-4 forum-filter"> <img src="images/filters/nero.png"> </div>
+                        <div class="col-md-4 forum-filter"> <img src="images/filters/dekiekeboes.png"> </div>
+                        <div class="col-md-4 forum-filter"> <img src="images/filters/kuifje.png"> </div>
+                        <div class="col-md-4 forum-filter"> <img src="images/filters/urbanus.png"> </div>
+                        <div class="col-md-4 forum-filter"> <img src="images/filters/fcdekampioenen.png"> </div>
+                        <div class="col-md-4 forum-filter"> <img src="images/filters/desmurfen.png"> </div>
+                        <div class="col-md-4 forum-filter"> <img src="images/filters/luckyluke.png"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
     <script type="x/templates" id="strip-items">
         <div class="strip-items row">
             <div v-on:click="stripClick(strip)" v-for="strip in strips" class="strip-item" v-bind:class="strip.orientation==='landscape'? 'landscape': 'portrait'"
@@ -231,6 +271,7 @@
     <script src="helpers/update-all-strips.js"></script>
     <script src="js/strips.js"></script>
     <script src="components/quiz.js"></script>
+    <script src="components/forum.js"></script>
     <script src="components/all-strips.js"></script>
     <script src="components/my-strips.js"></script>
     <script src="components/strip-wall.js"></script>
@@ -238,6 +279,7 @@
     <script src="components/login.js"></script>
     <script src="components/register.js"></script>
     <script src="js/questions.js"></script>
+    <script src="js/posts.js"></script>
     <script src="js/app.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="../slicknav/jquery.slicknav.js"></script>

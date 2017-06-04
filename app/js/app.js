@@ -24,6 +24,11 @@ var zoeff = zoeff || {};
             path: '/quiz',
             component: app.components.quiz
         },
+        {
+            path: '/forum',
+            component: app.components.forum
+        },
+        
     ]
 
     var router = new VueRouter({
@@ -48,5 +53,5 @@ var zoeff = zoeff || {};
         }
     }).$mount('#app');
 
-    Vue.use(VueFire);
+  
 })(zoeff);

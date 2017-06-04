@@ -7,17 +7,17 @@ var zoeff = zoeff || {};
             responses: [{
                     text: 'Rood',
                     value: 'Wiske',
-                    url: 'images/red.png'
+                    url: 'images/quiz/red.png'
                 },
                 {
                     text: 'Zwart',
                     value: 'Marcel',
-                    url: 'images/black.png'
+                    url: 'images/quiz/black.png'
                 },
                 {
                     text: 'Groen',
                     value: 'Flip',
-                    url: 'images/green.png'
+                    url: 'images/quiz/green.png'
                 },
             ]
         },
@@ -28,32 +28,32 @@ var zoeff = zoeff || {};
             responses: [{
                     text: 'Trouw',
                     value: 'Marcel',
-                    url: 'images/trouw.png'
+                    url: 'images/quiz/trouw.png'
                 },
                 {
                     text: 'Hulpvaardig',
                     value: 'Flip',
-                    url: 'images/hulpvaardig.png'
+                    url: 'images/quiz/hulpvaardig.png'
                 },
                 {
                     text: 'Bezorgd',
                     value: 'Marcel',
-                    url: 'images/bezorgd.png'
+                    url: 'images/quiz/bezorgd.png'
                 },
                 {
                     text: 'Intelligent',
                     value: 'Wiske',
-                    url: 'images/intelligent.png'
+                    url: 'images/quiz/intelligent.png'
                 },
                 {
                     text: 'Eigenwijs',
                     value: 'Flip',
-                    url: 'images/eigenwijs.png'
+                    url: 'images/quiz/eigenwijs.png'
                 },
                 {
                     text: 'Nieuwsgierig',
                     value: 'Wiske',
-                    url: 'images/nieuwsgierig.png'
+                    url: 'images/quiz/nieuwsgierig.png'
                 },
             ]
         },
@@ -64,17 +64,17 @@ var zoeff = zoeff || {};
             responses: [{
                     text: 'Suske',
                     value: 'Wiske',
-                    url: 'images/suske.png'
+                    url: 'images/quiz/suske.png'
                 },
                 {
                     text: 'Jommeke',
                     value: 'Flip',
-                    url: 'images/jommeke1.png'
+                    url: 'images/quiz/jommeke1.png'
                 },
                 {
                     text: 'Charlotte Kiekeboe',
                     value: 'Marcel',
-                    url: 'images/charlotte.png'
+                    url: 'images/quiz/charlotte.png'
                 },
             ]
         },
@@ -85,17 +85,17 @@ var zoeff = zoeff || {};
             responses: [{
                     text: 'Ik houd het hoofd koel en probeer een goede oplossing te vinden.',
                     value: 'Flip',
-                    url: 'images/hoofdkoel.png'
+                    url: 'images/quiz/hoofdkoel.png'
                 },
                 {
                     text: 'Ik probeer meteen het probleem op te lossen, wat soms wel tot meer problemen kan leiden.',
                     value: 'Marcel',
-                    url: 'images/problemen.png'
+                    url: 'images/quiz/problemen.png'
                 },
                 {
                     text: 'Ik zoek eerst uit hoe het probleem gekomen is en zoek daarna pas een oplossing ',
                     value: 'Wiske',
-                    url: 'images/probleemuitzoeken.png'
+                    url: 'images/quiz/probleemuitzoeken.png'
                 },
             ]
         },
@@ -106,32 +106,32 @@ var zoeff = zoeff || {};
             responses: [{
                     text: 'Kuikentje',
                     value: 'Flip',
-                    url: 'images/flip-emoji.png'
+                    url: 'images/quiz/flip-emoji.png'
                 },
                 {
                     text: 'Hartjes ogen',
                     value: 'Marcel',
-                    url: 'images/marcel-emoji.png'
+                    url: 'images/quiz/marcel-emoji.png'
                 },
                 {
                     text: 'Strikje',
                     value: 'Wiske',
-                    url: 'images/wiske-emoji.png'
+                    url: 'images/quiz/wiske-emoji.png'
                 },
                 {
                     text: 'Hartjeskus',
                     value: 'Marcel',
-                    url: 'images/marcel-emoji2.png'
+                    url: 'images/quiz/marcel-emoji2.png'
                 },
                 {
                     text: 'Bloem',
                     value: 'Wiske',
-                    url: 'images/wiske-emoji2.png'
+                    url: 'images/quiz/wiske-emoji2.png'
                 },
                 {
                     text: 'Lachend gezichtje',
                     value: 'Flip',
-                    url: 'images/flip-emoji2.png'
+                    url: 'images/quiz/flip-emoji2.png'
                 },
             ]
         },
