@@ -15,7 +15,8 @@
             height: $height;
             max-height: $height;
         }
-        body{
+
+        body {
             font-family: $body-font;
         }
 
@@ -35,9 +36,8 @@
             p {
                 font-size: 1.5em;
             }
-           
             .row {
-                .post-img{
+                .post-img {
                     text-align: center;
                 }
                 .post-image {
@@ -55,11 +55,12 @@
                     .white {
                         background-color: $white;
                         color: $red;
-                     
                     }
                     .comment {
                         padding: 50px;
-                       
+                        .form-group{
+                            display: block;
+                        }
                     }
                 }
             }
@@ -94,9 +95,9 @@
                     margin-bottom: 20px;
                 }
                 .forum-filter {
-                    padding: 20px;
+                    padding: 5px;
                     img {
-                        max-width: 100%;
+                        width: 100%;
                     }
                 }
             }
@@ -341,6 +342,19 @@
             }
             .strip-items {
                 width: 100%;
+            }
+            .forum {
+                .row {
+                    .forum-filter {
+                        width: 30%;
+                        img {
+                           
+                        }
+                    }
+                }
+            }
+            .post{
+                text-align: center;
             }
         }
 
