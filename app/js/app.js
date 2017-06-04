@@ -28,6 +28,11 @@ var zoeff = zoeff || {};
             path: '/forum',
             component: app.components.forum
         },
+        {
+            path: '/forum/:id',
+            name: 'forum-detail',
+            component: app.components.post
+        },
         
     ]
 

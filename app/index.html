@@ -91,13 +91,10 @@
     <script type="x/templates" id="forum">
         <div class="forum">
             <h1> Strips ruilen? </h1>
-            <!--<h3> Heb je reeds een strip die in jouw box zat? Dan ben je hier aan het juiste adres! In dit forum kan je jouw dubbele
-                strips ruilen tegen andere stripliefhebbers. </h3>-->
-
             <div class="row">
                 <div class="col-md-7">
 
-                    <div v-bind:class="post.type" class="row form-post" v-for="post in posts">
+                    <div v-bind:class="post.type + ' ' + post.filter" class="row form-post" v-for="post in posts">
                         <div class="col-md-4">
                             <img class="forum-image" v-bind:src="'images/forum/'+ post.image">
                             <h4> {{post.user}} - {{post.date}}</h4>
@@ -105,26 +102,70 @@
                         <div class="col-md-6">
                             <h2> {{post.title}}</h2>
                             <p> {{post.text}} </p>
-                            <router-link to="/post" tag="button" v-bind:class="post.button" class="btn" type="button">Lees meer </router-link>
+                            <router-link :to="{name:'forum-detail', params:{id:post.id}}" tag="button" v-bind:class="post.button" class="btn" type="button">Lees meer </router-link>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-3 push-md-1">
                     <h2> Filteren </h2>
-                    <div class="row">
-                        <div class="col-md-4 forum-filter"> <img src="images/filters/suskeenwiske.png"> </div>
-                        <div class="col-md-4 forum-filter"> <img src="images/filters/jommeke.png"> </div>
-                        <div class="col-md-4 forum-filter"> <img src="images/filters/nero.png"> </div>
-                        <div class="col-md-4 forum-filter"> <img src="images/filters/dekiekeboes.png"> </div>
-                        <div class="col-md-4 forum-filter"> <img src="images/filters/kuifje.png"> </div>
-                        <div class="col-md-4 forum-filter"> <img src="images/filters/urbanus.png"> </div>
-                        <div class="col-md-4 forum-filter"> <img src="images/filters/fcdekampioenen.png"> </div>
-                        <div class="col-md-4 forum-filter"> <img src="images/filters/desmurfen.png"> </div>
-                        <div class="col-md-4 forum-filter"> <img src="images/filters/luckyluke.png"> </div>
+                    <div id="filters" class="row">
+                        <a class="forum-filter col-md-4 " data-filter="*"> <img src="images/filters/alles.png"> </a>
+                        <a class="col-md-4 forum-filter" data-filter=".suskeenwiske"><img src="images/filters/suskeenwiske.png"></a>
+                        <a class="col-md-4 forum-filter" data-filter=".jommeke"><img src="images/filters/jommeke.png"></a>
+                        <a class="col-md-4 forum-filter" data-filter=".nero"><img src="images/filters/nero.png"></a>
+                        <a class="col-md-4 forum-filter" data-filter=".dekiekeboes"><img src="images/filters/dekiekeboes.png"></a>
+                        <a class="col-md-4 forum-filter" data-filter=".kuifje"><img src="images/filters/kuifje.png"></a>
+                        <a class="col-md-4 forum-filter" data-filter=".urbanus"><img src="images/filters/urbanus.png"></a>
+                        <a class="col-md-4 forum-filter" data-filter=".fcdekampioenen"><img src="images/filters/fcdekampioenen.png"></a>
+                        <a class="col-md-4 forum-filter" data-filter=".desmurfen"><img src="images/filters/desmurfen.png"></a>
+                        <a class="col-md-4 forum-filter" data-filter=".luckyluke"><img src="images/filters/luckyluke.png"></a>
                     </div>
                 </div>
             </div>
+        </div>
+    </script>
+    <script type="x/templates" id="post">
+        <div class="post">
+            <h1> Strips ruilen? </h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row question">
+                        <div class="col-md-4">
+                            <img class="post-image" v-bind:src="'images/forum/'+ post.image">
+                        </div>
+                        <div class="col-md-6">
+                            <h2> {{post.title}} </h2>
+                            <h5>Op {{post.date}} schreef {{post.user}}:</h5>
+                            <p> {{post.text}} </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 responses">
+                    <div v-bind:class="response.type" class="response" v-for="response in post.responses">
+                        <h4>{{response.user}} - {{response.date}} ({{response.time}}) </h4>
+                        <p> {{response.text}} </p>
+
+                    </div>
+                    <div class="comment">
+                        <h2> Kan jij {{post.user}} helpen? </h2>
+                        <div class="form-group row">
+                            <label for="comment-user" class="col-2 col-form-label">Username</label>
+                            <div class="col-3">
+                                <input class="form-control" type="text" id="comment-user">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="comment-comment" class="col-2 col-form-label">Comment</label>
+                            <div class="col-3">
+                                <textarea class="form-control" rows="5" id="comment-comment"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-danger"> Reageer </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </script>
     <script type="x/templates" id="strip-items">
@@ -270,6 +311,8 @@
     <script src="helpers/firebase.js"></script>
     <script src="helpers/update-all-strips.js"></script>
     <script src="js/strips.js"></script>
+    <script src="js/questions.js"></script>
+    <script src="js/posts.js"></script>
     <script src="components/quiz.js"></script>
     <script src="components/forum.js"></script>
     <script src="components/all-strips.js"></script>
@@ -278,8 +321,7 @@
     <script src="components/strip-items.js"></script>
     <script src="components/login.js"></script>
     <script src="components/register.js"></script>
-    <script src="js/questions.js"></script>
-    <script src="js/posts.js"></script>
+    <script src="components/post.js"></script>
     <script src="js/app.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="../slicknav/jquery.slicknav.js"></script>
@@ -287,6 +329,23 @@
         $(document).ready(function () {
             $(".nav").slicknav();
             $(".slicknav_menu").prepend('<div class="logo"> </div>')
+        });
+    </script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <script>
+        var $grid = $('.forum').isotope({
+            itemSelector: '.form-post',
+            percentPosition: true,
+            masonry: {
+                columnWidth: '.form-post',
+
+            }
+        });
+        $('#filters').on('click', 'a', function () {
+            var filterValue = $(this).attr('data-filter');
+            $grid.isotope({
+                filter: filterValue
+            });
         });
     </script>
 </body>

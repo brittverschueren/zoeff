@@ -15,17 +15,62 @@
             height: $height;
             max-height: $height;
         }
+        body{
+            font-family: $body-font;
+        }
+
+        .post {
+            width: 80%;
+            margin: auto;
+            h1 {
+                font-size: 6em;
+                color: $red;
+                text-align: center;
+                margin-bottom: 50px;
+            }
+            h2 {
+                font-size: 2em;
+                color: $red;
+            }
+            p {
+                font-size: 1.5em;
+            }
+           
+            .row {
+                .post-image {
+                    width: 60%;
+                    margin-bottom: 20px;
+                }
+                .responses {
+                    .response {
+                        padding: 50px;
+                    }
+                    .red {
+                        background-color: $red;
+                        color: $white;
+                    }
+                    .white {
+                        background-color: $white;
+                        color: $red;
+                     
+                    }
+                    .comment {
+                        padding: 50px;
+                       
+                    }
+                }
+            }
+        }
 
         .forum {
             width: 80%;
             margin: auto;
-            h1{
+            h1 {
                 font-size: 6em;
                 color: $red;
                 text-align: center;
             }
-            h3{
-               
+            h3 {
                 font-size: 1.5em;
                 font-family: $body-font;
             }
