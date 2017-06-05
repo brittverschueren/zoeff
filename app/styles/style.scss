@@ -58,7 +58,7 @@
                     }
                     .comment {
                         padding: 50px;
-                        .form-group{
+                        .form-group {
                             display: block;
                         }
                     }
@@ -79,7 +79,7 @@
                 font-size: 1.5em;
                 font-family: $body-font;
             }
-            p{
+            p {
                 font-size: 1.3em;
             }
             .row {
@@ -98,9 +98,9 @@
                     width: 60%;
                     margin-bottom: 20px;
                 }
-                .filter{
-                    h2{
-                        color:$red;
+                .filter {
+                    h2 {
+                        color: $red;
                     }
                 }
                 .forum-filter {
@@ -288,14 +288,30 @@
             margin: auto;
         }
 
+        .quiz {
+            background-image: url("../images/quiz.png");
+        }
+
         div {
             .question {
+                h3 {
+                    text-align: center;
+                    font-size: 5em;
+                }
+                .question-wrapper {
+                    width: 80%;
+                    margin: auto;
+                    padding: 5%;
+                    background-color: white;
+                }
                 .answer {
                     display: inline;
                     label>input:checked+img {
                         /* (RADIO CHECKED) IMAGE STYLES */
-                        border: 1px solid $red;
-                        border-radius: 100%;
+                      box-shadow: 0 3px 10px rgba(0,0,0,.35);
+                        padding: 0px;
+                        
+            
                     }
                     label {
                         &.image-label {
@@ -309,13 +325,15 @@
                         }
                     }
                     .answer-image {
-                        width: 10%;
+                        width: 30%;
+                        padding: 30px;
                     }
                 }
             }
         }
 
         .results {
+            background-color:white;
             img {
                 &.result-image {
                     width: 30%;
@@ -356,13 +374,11 @@
                 .row {
                     .forum-filter {
                         width: 30%;
-                        img {
-                           
-                        }
+                        img {}
                     }
                 }
             }
-            .post{
+            .post {
                 text-align: center;
             }
         }
