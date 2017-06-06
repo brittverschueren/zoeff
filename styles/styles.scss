@@ -113,9 +113,9 @@ body {
     padding-right: 0;
     padding-left: 0;
   }
-  .map{
-      text-align: center;
-    }
+  .map {
+    text-align: center;
+  }
   #box {
     height: auto;
     &.red-box {
@@ -125,13 +125,15 @@ body {
       background-color: $white;
     }
     .content {
-      width: 50%;
+     
       text-align: center;
       margin: 10% auto;
     }
     .about-p,
     .opmaat-p {
       text-align: left;
+      width: 50%;
+      margin: auto;
     }
     iframe {
       padding: 5%;
@@ -147,6 +149,27 @@ body {
   .box-img {
     height: 100%;
     background-image: url("../images/box.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .birthday-img{
+     height: 100%;
+    background-image: url("../images/extra/verjaardag.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .school-img{
+     height: 100%;
+    background-image: url("../images/extra/school.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .extra-img{
+     height: 100%;
+    background-image: url("../images/extra/extra.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -221,17 +244,14 @@ body {
       height: auto;
       text-align: center;
     }
-    
   }
 }
-
 
 // Medium devices (tablets, 768px and up)
 @media (max-width: 768px) {
   .navigatie {
     display: none;
   }
-
   .mobilemenu {
     .slicknav_menu {
       display: block;
@@ -252,5 +272,6 @@ body {
     }
   }
 }
+
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {}
