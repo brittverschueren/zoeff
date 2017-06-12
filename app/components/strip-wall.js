@@ -2,7 +2,8 @@
     attachclicks = function (el, strips, clickstriphandler) {
         _.forEach(strips, function (strip, index) {
             var className = 'strip-' + (index + 1);
-            var svg = _.find(el.children, function (el) {
+            
+            var svg = _.find(el.children[1].children[0].children, function (el) {
 
                 return el.tagName === 'svg';
             });

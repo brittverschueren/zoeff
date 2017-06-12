@@ -200,6 +200,10 @@
     </script>
 
     <script type="x/templates" id="strip-wall">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+
         <div class="strip-items row">
             <h1> De stripmuur van {{username}}</h1>
             <svg class="stripmuur" x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===1">
@@ -244,6 +248,8 @@
                 <image class="strip-5" v-bind:xlink:href="'images/'+strips[4].image" x="960" y="0" height="540px" width="960px"></image>
             </svg>
         </div>
+        </div>
+    </div>
     </script>
 
     <script type="x/templates" id="my-strips">
