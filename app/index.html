@@ -36,9 +36,9 @@
                     <li v-if="$route.path!=='/login' && $route.path!=='/register'">
                         <a href="/zoeff" v-on:click="logout">Afmelden</a>
                     </li>
-                    <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
                 </div>
             </ul>
         </div>
@@ -76,9 +76,9 @@
     </script>
 
     <script type="x/templates" id="quiz">
-        <div>
+        <div class="quiz-blok">
             <h1> Welk stripfiguur ben jij? </h1>
-            <form v-on:submit="submit">
+            <form v-on:submit="submit" v-if="!answer">
                 <div v-for="question in questions">
                     <div class="col-xs-12 question">
                         <div class="row">
@@ -101,12 +101,12 @@
                 <div class="quiz-button">
                     <button class="btn btn-danger" type="submit">Indienen</button>
                 </div>
-                <div v-if="answer" class="results">
+            </form>
+            <div v-if="answer" class="results">
                     <h2>Jij bent {{answer}}.</h2>
                     <img v-bind:src="'images/quiz/'+answer+'.png'" v-bind:alt="answer" class="result-image">
-                    <router-link to="/my" tag="button" class="btn btn-default" type="button">Ga naar jouw stripmuur</router-link>
+                    <router-link to="/my" tag="button" class="btn btn-danger" type="button">Ga naar jouw stripmuur</router-link>
                 </div>
-            </form>
         </div>
     </script>
     <script type="x/templates" id="forum">
@@ -200,52 +200,50 @@
     </script>
 
     <script type="x/templates" id="strip-wall">
+        <div class="strip-items row">
+            <h1> De stripmuur van {{username}}</h1>
+            <svg class="stripmuur" x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===1">
+                <rect class="strip-1" width="1920" height="1080" v-bind:style="{fill:strips[0].color}" />
+                <image class="strip-1" v-bind:xlink:href="'images/'+strips[0].image" x="240" y="135" height="825px" width="1500px"></image>
+            </svg>
+            <svg class="stripmuur" x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===2">
+                <polygon class="strip-2" points="0,0 1920,0 1920,1080 " v-bind:style="{fill:strips[1].color}" />
+                <image class="strip-2" v-bind:xlink:href="'images/'+strips[1].image" x="750" y="50" height="660px" width="1200px"></image>
+                <polygon class="strip-1" points="0,1080 0,0 1920,1080 " v-bind:style="{fill:strips[0].color}" />
+                <image class="strip-1" v-bind:xlink:href="'images/'+strips[0].image" x="20" y="500" height="550px" width="1000px"></image>
 
-            <div class="strip-items row">
-                <h1> De stripmuur van {{username}}</h1>
-                <svg class="stripmuur" x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===1">
-                    <rect class="strip-1" width="1920" height="1080" v-bind:style="{fill:strips[0].color}" />
-                    <image class="strip-1" v-bind:xlink:href="'images/'+strips[0].image" x="240" y="135" height="825px" width="1500px"></image>
-                </svg>
-                <svg class="stripmuur" x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===2">
-                    <polygon class="strip-2" points="0,0 1920,0 1920,1080 " v-bind:style="{fill:strips[1].color}" />
-                    <image class="strip-2" v-bind:xlink:href="'images/'+strips[1].image" x="750" y="50" height="660px" width="1200px"></image>
-                    <polygon class="strip-1" points="0,1080 0,0 1920,1080 " v-bind:style="{fill:strips[0].color}" />
-                    <image class="strip-1" v-bind:xlink:href="'images/'+strips[0].image" x="20" y="500" height="550px" width="1000px"></image>
-
-                </svg>
-                <svg class="stripmuur" x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===3">
-                    <rect class="strip-1" width="1080" height="1080" v-bind:style="{fill:strips[0].color}" />
-                    <image class="strip-1" v-bind:xlink:href="'images/'+strips[0].image" x="0" y="200" height="630px" width="1080px"></image>
-                    <rect class="strip-2" x="1080" width="840" height="540" v-bind:style="{fill:strips[1].color}" />
-                    <image class="strip-2" v-bind:xlink:href="'images/'+strips[1].image" x="1080" y="50" height="420px" width="870px"></image>
-                    <rect class="strip-3" x="1080" y="540" width="840" height="540" v-bind:style="{fill:strips[2].color}" />
-                    <image class="strip-3" v-bind:xlink:href="'images/'+strips[2].image" x="1080" y="540" height="550px" width="840px"></image>
-                </svg>
-                <svg class="stripmuur" x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===4">
-                    <rect class="strip-1" width="840" height="540" v-bind:style="{fill:strips[0].color}" />
-                    <image class="strip-1" v-bind:xlink:href="'images/'+strips[0].image" x="0" y="0" height="540px" width="840px"></image>
-                    <rect class="strip-2" y="540" width="840" height="540" v-bind:style="{fill:strips[1].color}" />
-                    <image class="strip-2" v-bind:xlink:href="'images/'+strips[1].image" x="0" y="540" height="540px" width="840px"></image>
-                    <polygon class="strip-3" points="840,0 840,1080 1920,0 " v-bind:style="{fill:strips[2].color}" />
-                    <image class="strip-3" v-bind:xlink:href="'images/'+strips[2].image" x="860" y="50" height="550px" width="660px"></image>
-                    <polygon class="strip-4" points="1920,0 840,1080 1920,1080 " v-bind:style="{fill:strips[3].color}" />
-                    <image class="strip-4" v-bind:xlink:href="'images/'+strips[3].image" x="1310" y="550" height="550px" width="550px"></image>
-                </svg>
-                <svg class="stripmuur" x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===5">
-                    <polygon class="strip-1" points="0,0 0,540 960,0 " v-bind:style="{fill:strips[0].color}" />
-                    <image class="strip-1" v-bind:xlink:href="'images/'+strips[0].image" x="-50" y="20" height="300px" width="750px"></image>
-                    <polygon class="strip-2" points="0,540 0,1080 960,540 960,0" v-bind:style="{fill:strips[1].color}" />
-                    <image class="strip-2" v-bind:xlink:href="'images/'+strips[1].image" x="350" y="300" height="400px" width="550px"></image>
-                    <polygon class="strip-4" points="960,540 1920,540 1920,1080 " v-bind:style="{fill:strips[3].color}" />
-                    <image class="strip-4" v-bind:xlink:href="'images/'+strips[3].image" x="1350" y="580" height="400px" width="550px"></image>
-                    <polygon class="strip-3" points="1920,1080 960,540 0,1080 " v-bind:style="{fill:strips[2].color}" />
-                    <image class="strip-3" v-bind:xlink:href="'images/'+strips[2].image" x="680" y="680" height="400px" width="600px"></image>
-                    <rect class="strip-5" x="960" width="960" height="540" v-bind:style="{fill:strips[4].color}" />
-                    <image class="strip-5" v-bind:xlink:href="'images/'+strips[4].image" x="960" y="0" height="540px" width="960px"></image>
-                </svg>
-            </div>
-
+            </svg>
+            <svg class="stripmuur" x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===3">
+                <rect class="strip-1" width="1080" height="1080" v-bind:style="{fill:strips[0].color}" />
+                <image class="strip-1" v-bind:xlink:href="'images/'+strips[0].image" x="0" y="200" height="630px" width="1080px"></image>
+                <rect class="strip-2" x="1080" width="840" height="540" v-bind:style="{fill:strips[1].color}" />
+                <image class="strip-2" v-bind:xlink:href="'images/'+strips[1].image" x="1080" y="50" height="420px" width="870px"></image>
+                <rect class="strip-3" x="1080" y="540" width="840" height="540" v-bind:style="{fill:strips[2].color}" />
+                <image class="strip-3" v-bind:xlink:href="'images/'+strips[2].image" x="1080" y="540" height="550px" width="840px"></image>
+            </svg>
+            <svg class="stripmuur" x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===4">
+                <rect class="strip-1" width="840" height="540" v-bind:style="{fill:strips[0].color}" />
+                <image class="strip-1" v-bind:xlink:href="'images/'+strips[0].image" x="0" y="0" height="540px" width="840px"></image>
+                <rect class="strip-2" y="540" width="840" height="540" v-bind:style="{fill:strips[1].color}" />
+                <image class="strip-2" v-bind:xlink:href="'images/'+strips[1].image" x="0" y="540" height="540px" width="840px"></image>
+                <polygon class="strip-3" points="840,0 840,1080 1920,0 " v-bind:style="{fill:strips[2].color}" />
+                <image class="strip-3" v-bind:xlink:href="'images/'+strips[2].image" x="860" y="50" height="550px" width="660px"></image>
+                <polygon class="strip-4" points="1920,0 840,1080 1920,1080 " v-bind:style="{fill:strips[3].color}" />
+                <image class="strip-4" v-bind:xlink:href="'images/'+strips[3].image" x="1310" y="550" height="550px" width="550px"></image>
+            </svg>
+            <svg class="stripmuur" x="0px" y="0px" width="1920px" height="1080px" viewBox="0 0 1920 1080" v-if="strips.length===5">
+                <polygon class="strip-1" points="0,0 0,540 960,0 " v-bind:style="{fill:strips[0].color}" />
+                <image class="strip-1" v-bind:xlink:href="'images/'+strips[0].image" x="-50" y="20" height="300px" width="750px"></image>
+                <polygon class="strip-2" points="0,540 0,1080 960,540 960,0" v-bind:style="{fill:strips[1].color}" />
+                <image class="strip-2" v-bind:xlink:href="'images/'+strips[1].image" x="350" y="300" height="400px" width="550px"></image>
+                <polygon class="strip-4" points="960,540 1920,540 1920,1080 " v-bind:style="{fill:strips[3].color}" />
+                <image class="strip-4" v-bind:xlink:href="'images/'+strips[3].image" x="1350" y="580" height="400px" width="550px"></image>
+                <polygon class="strip-3" points="1920,1080 960,540 0,1080 " v-bind:style="{fill:strips[2].color}" />
+                <image class="strip-3" v-bind:xlink:href="'images/'+strips[2].image" x="680" y="680" height="400px" width="600px"></image>
+                <rect class="strip-5" x="960" width="960" height="540" v-bind:style="{fill:strips[4].color}" />
+                <image class="strip-5" v-bind:xlink:href="'images/'+strips[4].image" x="960" y="0" height="540px" width="960px"></image>
+            </svg>
+        </div>
     </script>
 
     <script type="x/templates" id="my-strips">
@@ -253,7 +251,7 @@
     </script>
 
     <script type="x/templates" id="all-strips">
-        <strip-items v-bind:strips="allStrips" v-bind:click="addStrip"></strip-items>
+        <strip-items class="stripstoevoegen" v-bind:strips="allStrips" v-bind:click="addStrip"></strip-items>
     </script>
 
     <script type="x/templates" id="login">

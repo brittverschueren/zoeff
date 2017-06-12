@@ -3,8 +3,10 @@
         _.forEach(strips, function (strip, index) {
             var className = 'strip-' + (index + 1);
             var svg = _.find(el.children, function (el) {
+
                 return el.tagName === 'svg';
             });
+            console.log(svg);
             var children = _.filter(svg.childNodes, function (el) {
                 return el &&
                     el.className &&
@@ -20,7 +22,7 @@
     }
     Vue.component('stripWall', {
         mounted: function () {
-            attachclicks(this.$el, this.strips, this.click)
+            attachclicks(this.$el, this.strips, this.click);
         },
         updated: function () {
             attachclicks(this.$el, this.strips, this.click)

@@ -112,9 +112,21 @@
             }
         }
 
+        .vex.vex-theme-default {
+            .vex-dialog-button.vex-dialog-button-primary {
+                background: $red;
+            }
+        }
+
         .strip-items {
             margin: 5% auto 5% auto;
             width: 60%;
+            &.stripstoevoegen {
+                width: 85%;
+                margin-left: auto;
+                margin-top: 5%;
+                margin-right: 0%;
+            }
             .stripmuur {
                 height: 0%;
             }
@@ -288,11 +300,30 @@
             margin: auto;
         }
 
+
         .quiz {
             background-image: url("../images/quiz.png");
         }
 
-        div {
+        .quiz-blok {
+            h1 {
+                font-size: 5em;
+                color: $red;
+                text-align: center;
+                background: white;
+                width: 80%;
+                margin: 5% auto auto auto;
+            }
+            .quiz-button {
+                width: 80%;
+                margin: auto;
+                text-align: center;
+                background: white;
+                button {
+                    width: 30%;
+                    margin: auto auto 5% auto;
+                }
+            }
             .question {
                 h3 {
                     text-align: center;
@@ -308,10 +339,8 @@
                     display: inline;
                     label>input:checked+img {
                         /* (RADIO CHECKED) IMAGE STYLES */
-                      box-shadow: 0 3px 10px rgba(0,0,0,.35);
+                        box-shadow: 0 3px 10px rgba(0, 0, 0, .35);
                         padding: 0px;
-                        
-            
                     }
                     label {
                         &.image-label {
@@ -333,7 +362,10 @@
         }
 
         .results {
-            background-color:white;
+            background-color: white;
+            width: 80%;
+            text-align: center;
+            margin: auto;
             img {
                 &.result-image {
                     width: 30%;
@@ -341,6 +373,7 @@
             }
             button {
                 display: block;
+                margin: auto;
             }
         }
 

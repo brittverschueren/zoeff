@@ -2,7 +2,7 @@ var zoeff = zoeff || {};
 zoeff.components = zoeff.components || {};
 (function (app) {
     app.components.quiz = Vue.component('quiz', {
-         beforeMount: function () {
+        beforeMount: function () {
             var body = document.getElementsByTagName('body')[0];
             body.classList.add('quiz');
         },
