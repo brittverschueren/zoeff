@@ -300,7 +300,6 @@
             margin: auto;
         }
 
-
         .quiz {
             background-image: url("../images/quiz.png");
         }
@@ -377,6 +376,22 @@
             }
         }
 
+        @media (max-width: 1200px) {
+            .quiz-blok {
+                h1{
+                    width: 100%;
+                }
+                .quiz-button{
+                    width: 100%;
+                }
+                .question {
+                    .question-wrapper {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+
         @media (max-width: 768px) {
             .navigatie {
                 display: none;
@@ -413,6 +428,28 @@
             }
             .post {
                 text-align: center;
+            }
+            .quiz-blok {
+                h1 {
+                    font-size: 3em;
+                }
+                .question {
+                    h3 {
+                        font-size: 2em;
+                    }
+                    .answer {
+                        display: inline;
+                        label>input:checked+img {
+                            /* (RADIO CHECKED) IMAGE STYLES */
+                            box-shadow: 0 3px 10px rgba(0, 0, 0, .35);
+                            padding: 0px;
+                        }
+                        .answer-image {
+                            width: 20%;
+                            padding: 5px;
+                        }
+                    }
+                }
             }
         }
 
