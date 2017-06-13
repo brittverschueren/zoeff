@@ -376,12 +376,56 @@
             }
         }
 
+        .row {
+            .profiel {
+                background-color: $red;
+                color: white;
+                .profiel-beschrijving {
+                    h1 {
+                        display: block;
+                    }
+                    p {
+                        display: block;
+                    }
+                }
+                h1 {
+                    text-align: center;
+                    margin-top: 5%;
+                }
+                h4 {
+                    font-size: 1.3em;
+                }
+                p {
+                    margin-left: 5px;
+                    font-size: 1.2em;
+                }
+                h4,
+                p {
+                    display: inline;
+                }
+                .informatie {
+                    width: 80%;
+                    margin: auto;
+                    div {
+                        margin-bottom: 5%;
+                    }
+                }
+                .bol {
+                    margin: 5% auto;
+                    background: white;
+                    border-radius: 100%;
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+        }
+
         @media (max-width: 1200px) {
             .quiz-blok {
-                h1{
+                h1 {
                     width: 100%;
                 }
-                .quiz-button{
+                .quiz-button {
                     width: 100%;
                 }
                 .question {
