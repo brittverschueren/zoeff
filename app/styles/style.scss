@@ -412,10 +412,11 @@
                 }
                 .bol {
                     margin: 5% auto;
-                    background: white;
+                    background-image: url("../images/profiel.jpg");
+                    background-size: contain;
                     border-radius: 100%;
-                    width: 100px;
-                    height: 100px;
+                    width: 200px;
+                    height: 200px;
                 }
             }
         }

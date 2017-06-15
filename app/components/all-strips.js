@@ -7,7 +7,10 @@ zoeff.components = zoeff.components || {};
         },
         methods: {
             addStrip: function (strip) {
-                if (app.userStrips.length >= 5) return;
+                if (app.userStrips.length >= 5){
+                    vex.dialog.alert("Je kan maar 5 strips toevoegen aan je muur!");
+                    return;
+                }
                 var index = app.allStrips.indexOf(strip);
                 app.userStrips.push(app.allStrips[index]);
                 this.allStrips = app.helpers.updateAllStrips(app.allStrips, this.userStrips);
