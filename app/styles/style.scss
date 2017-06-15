@@ -151,6 +151,21 @@
                     height: 100%;
                 }
             }
+                .socialbuttons {
+                width: 100%;
+                margin-top:2%;
+                    p{
+                        margin-bottom: 0;
+                        color: $red;
+                    }
+                    a {
+                        font-size: 2em;
+                        background: none;
+                        padding: 10px;
+                        color: #e74034;
+                    }
+                }
+            
             h1 {
                 margin: auto auto 2% auto;
                 color: $red;
@@ -165,18 +180,7 @@
             h4 {
                 font-family: $header-font;
             }
-            #app {
-                .container-fluid {
-                    p {
-                        margin-top: 20px;
-                        a {
-                            color: white;
-                            padding: 10px;
-                            background-color: $red;
-                        }
-                    }
-                }
-            }
+
         }
 
         .registreren {
