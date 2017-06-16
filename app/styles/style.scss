@@ -151,21 +151,20 @@
                     height: 100%;
                 }
             }
-                .socialbuttons {
+            .socialbuttons {
                 width: 100%;
-                margin-top:2%;
-                    p{
-                        margin-bottom: 0;
-                        color: $red;
-                    }
-                    a {
-                        font-size: 2em;
-                        background: none;
-                        padding: 10px;
-                        color: #e74034;
-                    }
+                margin-top: 2%;
+                p {
+                    margin-bottom: 0;
+                    color: $red;
                 }
-            
+                a {
+                    font-size: 2em;
+                    background: none;
+                    padding: 10px;
+                    color: #e74034;
+                }
+            }
             h1 {
                 margin: auto auto 2% auto;
                 color: $red;
@@ -180,7 +179,6 @@
             h4 {
                 font-family: $header-font;
             }
-
         }
 
         .registreren {
@@ -384,14 +382,6 @@
             .profiel {
                 background-color: $red;
                 color: white;
-                .profiel-beschrijving {
-                    h1 {
-                        display: block;
-                    }
-                    p {
-                        display: block;
-                    }
-                }
                 h1 {
                     text-align: center;
                     margin-top: 5%;
@@ -407,6 +397,14 @@
                 p {
                     display: inline;
                 }
+                .profiel-beschrijving {
+                    h1 {
+                        display: block;
+                    }
+                    p {
+                        display: block;
+                    }
+                }
                 .informatie {
                     width: 80%;
                     margin: auto;
@@ -421,6 +419,45 @@
                     border-radius: 100%;
                     width: 200px;
                     height: 200px;
+                }
+            }
+            .profielupdates {
+                width: 100%;
+                margin-top: 2%;
+                ;
+                h1 {
+                    text-align: center;
+                    color: $red;
+                    padding-bottom: 2%;
+                }
+                .red {
+                    color: $white;
+                    background-color: $red;
+                }
+                .white {
+                    color: $red;
+                    background-color: $white;
+                  
+                }
+                .white,
+                .red {
+                    padding: 5%;
+                    .tijdstip {
+                        font-style: italic;
+                    }
+                }
+                .profielberichten {
+                    width: 80%;
+                    margin: auto;
+                }
+                .comment {
+                    width: 80%;
+                    margin: auto;
+                    padding: 50px;
+                    color: $red;
+                    border-top: 1px solid $red;
+                    border-bottom: 1px solid $red;
+                    margin-bottom: 3%;
                 }
             }
         }
