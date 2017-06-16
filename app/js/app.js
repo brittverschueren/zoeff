@@ -33,7 +33,7 @@ var zoeff = zoeff || {};
             name: 'forum-detail',
             component: app.components.post
         },
-        
+
     ]
 
     var router = new VueRouter({
@@ -55,8 +55,8 @@ var zoeff = zoeff || {};
         },
         methods: {
             logout: app.logout
-        }
+        },
     }).$mount('#app');
 
-  
+
 })(zoeff);

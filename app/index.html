@@ -23,7 +23,7 @@
                     <router-link to="/add">Strips toevoegen</router-link>
                 </li>
                 <li v-if="$route.path!=='/login' && $route.path!=='/register'">
-                    <router-link to="/forum">Ruilen</router-link>
+                    <router-link to="/forum" onClick="window.location.reload()">Ruilen</router-link>
                 </li>
                 <li v-if="$route.path=='/forum'">
                     <router-link to="/forum">Bericht plaatsen</router-link>
@@ -60,7 +60,6 @@
     <script src="https://unpkg.com/vue-router"></script>
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
     <script src="../slicknav/jquery.slicknav.js"></script>
     <script type="text/javascript">
         setTimeout(function () {
@@ -149,6 +148,7 @@
 
     <script type="x/templates" id="post">
         <div class="post">
+
             <h1> Strips ruilen? </h1>
             <div class="row">
                 <div class="col-md-12">
@@ -186,6 +186,8 @@
                         <button type="submit" class="btn btn-danger"> Reageer </button>
                     </div>
                 </div>
+                <router-link to="/forum" tag="button" class="btn btn-danger" type="button">Terug</router-link>
+
             </div>
         </div>
         </div>
@@ -399,9 +401,10 @@
     <script src="components/register.js"></script>
     <script src="components/post.js"></script>
     <script src="js/app.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+
     <script>
         setTimeout(function () {
-
             var $grid = $('.forum').isotope({
                 itemSelector: '.form-post',
                 percentPosition: false,
@@ -412,7 +415,8 @@
                     filter: filterValue
                 });
             });
-        }, 500);
+
+        }, 1500);
     </script>
 
 </body>
