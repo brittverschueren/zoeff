@@ -437,7 +437,6 @@
                 .white {
                     color: $red;
                     background-color: $white;
-                  
                 }
                 .white,
                 .red {
@@ -506,9 +505,11 @@
             }
             .forum {
                 .row {
+                    .form-post {
+                        padding: 50px 0;
+                    }
                     .forum-filter {
                         width: 30%;
-                        
                     }
                 }
             }

@@ -243,6 +243,9 @@ body {
     #box {
       height: auto;
       text-align: center;
+      .about-p, .opmaat-p{
+        width: 80%;
+      }
     }
     iframe {
       padding: 5%;
