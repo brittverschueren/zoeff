@@ -85,6 +85,7 @@
             .row {
                 .form-post {
                     padding: 50px;
+                    position: static !important;
                     &.red {
                         background-color: $red;
                         color: $white;
@@ -260,6 +261,9 @@
                 margin-right: auto;
                 li {
                     display: inline;
+                    &.hide {
+                        display: none !important;
+                    }
                 }
                 a {
                     text-decoration: none;
@@ -485,6 +489,9 @@
                 .slicknav_menu {
                     display: block;
                     background-color: $red;
+                    li.hide {
+                        display: none;
+                    }
                     a {
                         background-color: $red;
                         font-family: $header-font;

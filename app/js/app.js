@@ -42,15 +42,36 @@ var zoeff = zoeff || {};
 
     app.router = router;
 
+    var updateMenu = function (self) {
+        self.loggedInStyle.hide = self.$route.path === '/login' || self.$route.path === '/register';
+        self.forumStyle.hide = self.$route.path !== '/forum';
+    }
+
     var vueApp = new Vue({
         router: router,
-        data: function () {
-            var self = this;
-            app.getUsername(function (un) {
-                self.username = un;
+        mounted: function () {
+            updateMenu(this);
+            $(".nav-m").slicknav({
+                duplicate: false,
+                closeOnClick: true,
             });
-            return {
-                username: app.getUsername()
+            $(".slicknav_menu").prepend('<a href="/zoeff"><div class="logo"> </div></a>');
+            app.getUsername(function (un) {
+                this.username = un;
+            });
+        },
+        data: {
+            username: app.getUsername(),
+            loggedInStyle: {
+                hide: true
+            },
+            forumStyle: {
+                hide: true
+            }
+        },
+        watch: {
+            '$route': function () {
+                updateMenu(this);
             }
         },
         methods: {

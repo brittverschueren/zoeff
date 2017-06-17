@@ -7,7 +7,6 @@
 
                 return el.tagName === 'svg';
             });
-            console.log(svg);
             var children = _.filter(svg.childNodes, function (el) {
                 return el &&
                     el.className &&
@@ -32,7 +31,6 @@
             var self = this;
             app.getUsername(function (un) {
                 self.username = un;
-                console.log(un)
             });
             return {
                 username: app.getUsername()

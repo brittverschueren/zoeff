@@ -12,20 +12,48 @@
 <body>
 
     <div id="app">
+
         <div class="navigatie">
             <div class="logo"> </div>
             <ul class="nav">
                 <li><a href="/zoeff"> Home </a></li>
-                <li v-if="$route.path!=='/login' && $route.path!=='/register'">
+                <li v-bind:class="loggedInStyle">
                     <router-link to="/my">Mijn stripmuur</router-link>
                 </li>
-                <li v-if="$route.path!=='/login' && $route.path!=='/register'">
+                <li v-bind:class="loggedInStyle">
                     <router-link to="/add">Strips toevoegen</router-link>
                 </li>
-                <li v-if="$route.path!=='/login' && $route.path!=='/register'">
-                    <router-link to="/forum" onClick="window.location.reload()">Ruilen</router-link>
+                <li v-bind:class="loggedInStyle">
+                    <router-link to="/forum">Ruilen</router-link>
                 </li>
-                <li v-if="$route.path=='/forum'">
+                <li v-bind:class="forumStyle">
+                    <router-link to="/forum">Bericht plaatsen</router-link>
+                </li>
+                <!--<li v-if="$route.path!=='/login' && $route.path!=='/register'">
+                    <a>Hallo {{username}}</a>
+                </li>-->
+
+                <div class="sm-login">
+                    <li v-if="$route.path!=='/login' && $route.path!=='/register'">
+                        <a href="/zoeff" v-on:click="logout">Afmelden</a>
+                    </li>
+                    <a href="https://www.facebook.com/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                </div>
+            </ul>
+            <ul class="nav-m">
+                <li><a href="/zoeff"> Home </a></li>
+                <li v-bind:class="loggedInStyle">
+                    <router-link to="/my">Mijn stripmuur</router-link>
+                </li>
+                <li v-bind:class="loggedInStyle">
+                    <router-link to="/add">Strips toevoegen</router-link>
+                </li>
+                <li v-bind:class="loggedInStyle">
+                    <router-link to="/forum">Ruilen</router-link>
+                </li>
+                <li v-bind:class="forumStyle">
                     <router-link to="/forum">Bericht plaatsen</router-link>
                 </li>
                 <!--<li v-if="$route.path!=='/login' && $route.path!=='/register'">
@@ -60,13 +88,8 @@
     <script src="https://unpkg.com/vue-router"></script>
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
     <script src="../slicknav/jquery.slicknav.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".nav").slicknav();
-            $(".slicknav_menu").prepend('<a href="/zoeff"><div class="logo"> </div></a>')
-        });
-    </script>
     <script>
         vex.defaultOptions.className = 'vex-theme-default'
     </script>
@@ -164,6 +187,7 @@
                     <div v-bind:class="response.type" class="response" v-for="response in post.responses">
                         <h4>{{response.user}} - {{response.date}} ({{response.time}}) </h4>
                         <p> {{response.text}} </p>
+
 
                     </div>
                     <div class="comment">
@@ -453,24 +477,6 @@
     <script src="components/register.js"></script>
     <script src="components/post.js"></script>
     <script src="js/app.js"></script>
-
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
-
-    <script>
-        setTimeout(function () {
-            var $grid = $('.forum').isotope({
-                itemSelector: '.form-post',
-                percentPosition: false,
-            });
-            $('#filters').on('click touchstart', 'a', function () {
-                var filterValue = $(this).attr('data-filter');
-                $grid.isotope({
-                    filter: filterValue
-                });
-            });
-
-        }, 1500);
-    </script>
 
 </body>
 
