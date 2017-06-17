@@ -62,14 +62,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="../slicknav/jquery.slicknav.js"></script>
     <script type="text/javascript">
-        setTimeout(function () {
-            $(document).ready(function () {
-                $(".nav").slicknav();
-                $(".slicknav_menu").prepend('<div class="logo"> </div>')
-            });
-        }, 500);
+        $(document).ready(function () {
+            $(".nav").slicknav();
+            $(".slicknav_menu").prepend('<a href="/zoeff"><div class="logo"> </div></a>')
+        });
     </script>
-
     <script>
         vex.defaultOptions.className = 'vex-theme-default'
     </script>
@@ -456,6 +453,7 @@
     <script src="components/register.js"></script>
     <script src="components/post.js"></script>
     <script src="js/app.js"></script>
+
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
 
     <script>
