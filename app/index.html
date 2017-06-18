@@ -253,10 +253,13 @@
         </div>
     </script>
     <script type="x/templates" id="strip-items">
-        <div class="strip-items row">
-            <div v-on:click="stripClick(strip)" v-for="strip in strips" class="strip-item" v-bind:class="strip.orientation==='landscape'? 'landscape': 'portrait'"
-                v-bind:style="{backgroundColor: strip.color }">
-                <img v-bind:alt="strip.name" v-bind:src="'images/'+ strip.image">
+        <div class="strips-toevoegen">
+            <h1> Strips toevoegen </h1>
+            <div class="strip-items row">
+                <div v-on:click="stripClick(strip)" v-for="strip in strips" class="strip-item" v-bind:class="strip.orientation==='landscape'? 'landscape': 'portrait'"
+                    v-bind:style="{backgroundColor: strip.color }">
+                    <img v-bind:alt="strip.name" v-bind:src="'images/'+ strip.image">
+                </div>
             </div>
         </div>
     </script>
@@ -273,19 +276,19 @@
                     </div>
                     <div>
                         <h4>Favoriete strip:</h4>
-                        <p>Suske en Wiske</p>
+                        <p>Jommeke</p>
                     </div>
                     <div>
                         <h4>Favoriete personage</h4>
-                        <p>Professor Barabas</p>
+                        <p>Flip</p>
                     </div>
                     <div>
                         <h4>Lievelingsalbum:</h4>
-                        <p>De schone slaper</p>
+                        <p>Apen in huis</p>
                     </div>
                     <div>
                         <h4>Lievelings striptekenaar:</h4>
-                        <p>Willy Vandersteen</p>
+                        <p>Jef Nys</p>
                     </div>
                     <div>
                         <h4>Favoriete klanknabootsing:</h4>
@@ -380,11 +383,13 @@
                     <div class="red">
                         <h2> Mijn lievelingsstrip </h2>
                         <p class="tijdstip"> gepost op 15/06/2017 om 12u40 </p>
-                        <p> In ut risus magna. Vestibulum et auctor orci, vitae pharetra lacus. Mauris elementum diam sed sollicitudin
-                            consequat. Aliquam rutrum commodo massa. Nam a pretium nunc. Vivamus ornare leo ut tempor sagittis.
-                            Vestibulum congue ut mi sit amet condimentum. Pellentesque pretium urna in metus venenatis tristique.
-                            Suspendisse euismod facilisis ligula vel consectetur. Donec blandit libero at libero molestie,
-                            quis ornare turpis luctus.
+                        <p> Jommeke! De enige strip in Vlaanderen die zich echt in de wereld van de kinderen verplaatst, en de
+                            enige strip die lang zijn niveau heeft kunnen behouden (afgezien van het feit dat de eerste uiteraard
+                            nog anders waren).
+                            </br> Jef Nys (de beste (technisch) tekenaar in België) slaagde er niet alleen in de perfectste
+                            tekeningetjes te maken die kinderen aanspreken, hij zoog hen ook mee inverhalen die kinderen
+                            graag willen lezen. De milde humor van Flip tovert nu nog vaak een glimlach op mijn gezicht.
+                            Echt leuk mijn Jommekes te herlezen en het kind in mij weer te doen ontwaken 8)
                         </p>
                         <p> 0 <i class="fa fa-heart-o" aria-hidden="true"></i></p>
                         <button class="btn btn-warning"><i class="fa fa-heart-o" aria-hidden="true"></i> BANG-elijk</button>
@@ -392,11 +397,11 @@
                     <div class="white">
                         <h2> Mijn stripbox deze maand </h2>
                         <p class="tijdstip"> gepost op 9/06/2017 om 18u35 </p>
-                        <p> In ut risus magna. Vestibulum et auctor orci, vitae pharetra lacus. Mauris elementum diam sed sollicitudin
-                            consequat. Aliquam rutrum commodo massa. Nam a pretium nunc. Vivamus ornare leo ut tempor sagittis.
-                            Vestibulum congue ut mi sit amet condimentum. Pellentesque pretium urna in metus venenatis tristique.
-                            Suspendisse euismod facilisis ligula vel consectetur. Donec blandit libero at libero molestie,
-                            quis ornare turpis luctus.
+                        <p> In mijn stripbox zaten deze maand weer superleuke strips! Zoals ik reeds in mijn profiel zeg is Jommeke
+                            mijn favoriete stripreeks, maar ik had op mijn muur ook de Kiekeboes en Suske en Wiske gezet.
+                            Nu kreeg ik 2 Jommekes strips en een Kiekeboe en Suske en Wiske album! Ik had slechts 1 van de
+                            strips reeds gelezen, maar nog niet in mijn bezit! Ik vond het een geslaagde maand voor mijn
+                            Zoeffbox! Ben zeer tevreden!
                         </p>
                         <p> 5 <i class="fa fa-heart-o" aria-hidden="true"></i> </p>
                         <button class="btn btn-danger"><i class="fa fa-heart-o" aria-hidden="true"></i> BANG-elijk</button>
@@ -404,11 +409,9 @@
                     <div class="red">
                         <h2> Mijn lievelingsfiguur </h2>
                         <p class="tijdstip"> gepost op 28/05/2017 om 17u17 </p>
-                        <p> In ut risus magna. Vestibulum et auctor orci, vitae pharetra lacus. Mauris elementum diam sed sollicitudin
-                            consequat. Aliquam rutrum commodo massa. Nam a pretium nunc. Vivamus ornare leo ut tempor sagittis.
-                            Vestibulum congue ut mi sit amet condimentum. Pellentesque pretium urna in metus venenatis tristique.
-                            Suspendisse euismod facilisis ligula vel consectetur. Donec blandit libero at libero molestie,
-                            quis ornare turpis luctus.
+                        <p> Mijn lievelingsfiguur is Flip! Hij gaat door het vuur voor zijn vrienden. Zo red hij vaak zijn vrienden
+                            door het doorbijten van touw. Hij kan soms grof uit de hoek komen, maar dit maakt hem natuurlijk
+                            nog grappiger! Zoals hij Filiberke zijn haar 'melkboerenhondehaar' noemde!
                         </p>
                         <p> 2 <i class="fa fa-heart-o" aria-hidden="true"></i> </p>
                         <button class="btn btn-warning"><i class="fa fa-heart-o" aria-hidden="true"></i> BANG-elijk</button>

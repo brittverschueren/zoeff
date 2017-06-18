@@ -61,8 +61,8 @@ var zoeff = zoeff || {};
             },
             {
                 id: 3,
-                title: 'De kiekeboes: Tienduizen dagen ruilen',
-                text: 'Ik heb in mijn box Tienduizen dagen gekregen, maar wil liever een ander album van de Kiekeboes omdat ik deze al heb. Is er iemand die met mij wil ruilen?',
+                title: 'De kiekeboes: Tienduizend dagen ruilen',
+                text: 'Ik heb in mijn box Tienduizend dagen gekregen, maar wil liever een ander album van de Kiekeboes omdat ik deze al heb. Is er iemand die met mij wil ruilen?',
                 type: 'red',
                 button:'btn-warning',
                 user: 'Britt',
