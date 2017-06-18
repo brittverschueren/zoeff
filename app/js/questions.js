@@ -3,7 +3,7 @@ var zoeff = zoeff || {};
     app.questions = [{
             text: 'Kies een kleur',
             type: 'image',
-            style: 'quiz-image',
+            style: 'quiz-text',
             responses: [{
                     text: 'Rood',
                     value: 'Wiske',
@@ -60,7 +60,7 @@ var zoeff = zoeff || {};
         {
             text: 'Met wie zou je het meest rondhangen?',
             type: 'image',
-            style: 'quiz-image',
+            style: 'quiz-text',
             responses: [{
                     text: 'Suske',
                     value: 'Wiske',
@@ -102,7 +102,7 @@ var zoeff = zoeff || {};
         {
             text: 'Kies een Emoji',
             type: 'image',
-            style: 'quiz-image',
+            style: 'quiz-text',
             responses: [{
                     text: 'Kuikentje',
                     value: 'Flip',
