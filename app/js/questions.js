@@ -3,7 +3,7 @@ var zoeff = zoeff || {};
     app.questions = [{
             text: 'Kies een kleur',
             type: 'image',
-            orientation: 'landscape',
+            style: 'quiz-image',
             responses: [{
                     text: 'Rood',
                     value: 'Wiske',
@@ -24,7 +24,7 @@ var zoeff = zoeff || {};
         {
             text: 'Beschrijf je persoonlijkheid in 1 woord',
             type: 'image',
-            orientation: 'portrait',
+            style: 'quiz-text',
             responses: [{
                     text: 'Trouw',
                     value: 'Marcel',
@@ -60,7 +60,7 @@ var zoeff = zoeff || {};
         {
             text: 'Met wie zou je het meest rondhangen?',
             type: 'image',
-            orientation: 'landscape',
+            style: 'quiz-image',
             responses: [{
                     text: 'Suske',
                     value: 'Wiske',
@@ -81,7 +81,7 @@ var zoeff = zoeff || {};
         {
             text: 'Hoe reageer jij in een probleemsituatie?',
             type: 'image',
-            orientation: 'portrait',
+            style: 'quiz-text',
             responses: [{
                     text: 'Ik houd het hoofd koel en probeer een goede oplossing te vinden.',
                     value: 'Flip',
@@ -102,7 +102,7 @@ var zoeff = zoeff || {};
         {
             text: 'Kies een Emoji',
             type: 'image',
-            orientation: 'landscape',
+            style: 'quiz-image',
             responses: [{
                     text: 'Kuikentje',
                     value: 'Flip',

@@ -339,6 +339,7 @@
                     margin: auto;
                     padding: 5%;
                     background-color: white;
+                    text-align: center;
                 }
                 .answer {
                     display: inline;
@@ -357,6 +358,11 @@
                         &.label-text {
                             display: block;
                         }
+                        .quiz-text {
+                            width: 30%;
+                            padding: 30px;
+                            display: inline;
+                        }
                     }
                     .answer-image {
                         width: 30%;
@@ -371,13 +377,25 @@
             width: 80%;
             text-align: center;
             margin: auto;
+            padding: 3%;
             img {
                 &.result-image {
                     width: 30%;
+                    margin: auto;
                 }
             }
             button {
                 display: block;
+                margin: auto;
+            }
+            .answer-text {
+                width: 80%;
+                margin: auto;
+                padding: 5px;
+                text-align: left;
+            }
+            .card {
+                width: 80%;
                 margin: auto;
             }
         }
@@ -470,9 +488,6 @@
                 h1 {
                     width: 100%;
                 }
-                .quiz-button {
-                    width: 100%;
-                }
                 .question {
                     .question-wrapper {
                         width: 90%;
@@ -510,37 +525,83 @@
             .strip-items {
                 width: 100%;
             }
-            .forum {
-                .row {
-                    .form-post {
-                        padding: 50px 0;
-                    }
-                    .forum-filter {
-                        width: 30%;
+            .row {
+                .profielupdates {
+                    .profielberichten {
+                        width: 100%;
                     }
                 }
             }
-            .post {
-                text-align: center;
-            }
-            .quiz-blok {
-                h1 {
-                    font-size: 3em;
+        }
+
+        .forum {
+            width: 100%;
+            .row {
+                #filters {
+                    width: 99%;
+                    margin: auto;
                 }
-                .question {
-                    h3 {
-                        font-size: 2em;
+                .form-post {
+                    padding: 50px 0;
+                }
+                .forum-filter {
+                    width: 30%;
+                }
+            }
+        }
+
+        .post {
+            text-align: center;
+        }
+
+        .quiz-blok {
+            background: white;
+            padding: 20px;
+            h1 {
+                font-size: 2.5em;
+            }
+            .quiz-button {
+                button {
+                    width: 100%;
+                }
+            }
+            .question {
+                h3 {
+                    font-size: 2em;
+                }
+                .answer {
+                    display: inline;
+                    label>input:checked+img {
+                        /* (RADIO CHECKED) IMAGE STYLES */
+                        box-shadow: 0 3px 10px rgba(0, 0, 0, .35);
+                        padding: 0px;
                     }
-                    .answer {
-                        display: inline;
-                        label>input:checked+img {
-                            /* (RADIO CHECKED) IMAGE STYLES */
-                            box-shadow: 0 3px 10px rgba(0, 0, 0, .35);
-                            padding: 0px;
-                        }
-                        .answer-image {
-                            width: 20%;
+                    .answer-image {
+                        width: 20%;
+                        padding: 5px;
+                    }
+                    label {
+                        .quiz-text {
+                            display: block;
+                            width: 40%;
+                            margin: auto;
                             padding: 5px;
+                        }
+                    }
+                }
+            }
+            .results {
+                padding: 0;
+                width: 100%;
+                .result-image {
+                    width: 50%
+                }
+                .card {
+                    width: 100%;
+                    margin: 5% 0;
+                    .card-block {
+                        .notmobile {
+                            display: none;
                         }
                     }
                 }

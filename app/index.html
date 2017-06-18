@@ -110,7 +110,7 @@
                                     </label>
                                     <label class="image-label">
                             <input v-if="question.type==='image'" type="radio" v-bind:name="question.text" v-bind:value="answer.value" required>
-                            <img v-if="question.type==='image'" v-bind:src="answer.url" alt="" class="answer-image">
+                            <img v-if="question.type==='image'" v-bind:src="answer.url" alt="" v-bind:class="question.style" class="answer-image">
                             </label>
                                 </div>
                             </div>
@@ -122,9 +122,48 @@
                 </div>
             </form>
             <div v-if="answer" class="results">
-                <h2>Jij bent {{answer}}.</h2>
-                <img v-bind:src="'images/quiz/'+answer+'.png'" v-bind:alt="answer" class="result-image">
-                <router-link to="/my" tag="button" class="btn btn-danger" type="button">Ga naar jouw stripmuur</router-link>
+                <div class="card">
+                    <img v-bind:src="'images/quiz/'+answer+'.png'" v-bind:alt="answer" class="card-img-top result-image">
+                    <div class="card-block">
+                        <h2 class="card-title">Jij bent {{answer}}.</h2>
+                        <p class="answer-text" v-if="answer==='Marcel'">
+                            Kiekeboe is een zeer enthousiast, vriendelijk en schalks iemand. Hij toont zich vaak wat angstig en bezorgd over zijn familieleden,
+                            vooral Fanny Kiekeboe. Daarnaast is hij ook hondstrouw tegenover Charlotte Kiekeboe en in gezelschap
+                            van vrouwen die hem proberen verleiden eerder bang dan geïnteresseerd.
+                            <p class="notmobile answer-text" v-if="answer==='Marcel'"> Marcel kan soms naïef zijn en snel zwichten onder druk van anderen die hem voor zijn kar proberen
+                                spannen. Firmin Van De Kasseien en Moemoe maken hier vaak misbruik van en kleineren hem zelfs.
+                                Kiekeboe heeft meestal lange tijd niet door in welke dubieuze, smerige zaakjes hij dankzij
+                                Van De Kasseien betrokken raakt. Hij neemt ook vaak overhaast beslissingen met ingrijpende
+                                gevolgen, zo vertelt hij in Met de Franse slag op een dag aan zijn gezin dat ze onmiddellijk
+                                emigreren naar zuid-Frankrijk, zonder dat hij daarover met hen gesproken had.
+                            </p>
+                        </p>
+                        <p class="answer-text" v-if="answer==='Flip'">
+                            Flip is een papegaai die even vlot kan praten als mensen en vaak het hoogste woord voert. Klinkt het niet, dan botst het
+                            wel. Flip heeft groene pluimen op het lichaam, en rode op de vleugels. Hij is ongeveer veertig
+                            centimeter groot. Wanneer Jommeke en zijn vrienden in een gevaarlijke situatie zijn verzeild,
+                            is Flip meestal degene die het hoofd koel kan houden en de situatie kan omkeren.
+                            <p class="notmobile answer-text" v-if="answer==='Flip'"> Hij klaagt weleens wanneer hij Jommeke en zijn vrienden moet redden, of weer op onderzoek moet
+                                gaan. Uiteindelijk is hij wel weer steeds de redder in nood, onder meer in de albums De zingende
+                                aap en De panda van Wanda waarin hij met zijn snavel de touwen kan doorbijten. Maar wanneer
+                                Jommeke in De koningin van Onderland op de pijnbank ligt, bijt hij vreemd genoeg de touwen
+                                niet door. Ook is Flip praktisch nooit jaloers, behalve toen Filiberke ook verliefd was geworden
+                                op de Griekse Helena in Paniek op de Akropolis.
+                            </p>
+                        </p>
+                        <p class="answer-text" v-if="answer==='Wiske'">
+                            Wiske is vaak koppig, driftig en/of jaloers, maar ze heeft een hart van goud en speelt in veel verhalen de hoofdrol. Anders
+                            speelt ze belangrijke bijrollen of is haar verdwijning of ontvoering de reden voor het avontuur.
+                            <p class="notmobile answer-text" v-if="answer==='Wiske'"> Ze is vaker het centrum van de aandacht dan de nuchtere en bravere Suske. Wiske zet mensen vaak
+                                op hun plaats, ze is tegen onrecht. Wiske kan ontzettend fel in de strijd zijn, ze komt op
+                                voor de onderdrukten en de natuur. Ze verliest soms alles uit het oog en kan erg onredelijk
+                                worden om iemand te helpen en het kwaad te bestrijden. Ze gaat altijd op haar gevoel af,
+                                maar twijfelt vaak lang over de dingen die ze doet.
+                            </p>
+                        </p>
+                        <router-link to="/my" tag="button" class="btn btn-danger" type="button">Ga naar jouw stripmuur</router-link>
+                    </div>
+                </div>
             </div>
         </div>
     </script>
