@@ -423,6 +423,20 @@
                 p {
                     display: inline;
                 }
+                .vrienden {
+                    .vriend {
+                        border: 1px solid $red;
+                        background: $white;
+                        img {
+                            width: 100%;
+                        }
+                        h5 {
+                            text-align: center;
+                            font-family: $header-font;
+                            color: $red;
+                        }
+                    }
+                }
                 .profiel-beschrijving {
                     h1 {
                         display: block;
@@ -530,7 +544,23 @@
                 width: 100%;
             }
             .row {
+                .profiel {
+                    .vrienden {
+                        display: block;
+                        text-align: center;
+                        .vriend {
+                            width: 50%;
+                            margin: auto;
+                        }
+                        button {
+                            margin-top: 5%;
+                        }
+                    }
+                }
                 .profielupdates {
+                    .comment {
+                        width: 100%;
+                    }
                     .profielberichten {
                         width: 100%;
                     }

@@ -266,7 +266,7 @@
 
     <script type="x/templates" id="strip-wall">
         <div class="row">
-            <div class="col-md-4 profiel">
+            <div class="col-xs-12 col-md-12 col-lg-4 profiel">
                 <h1> over {{username}}</h1>
                 <div class="bol"> </div>
                 <div class="informatie">
@@ -295,13 +295,30 @@
                         <p>Kladzang</p>
                     </div>
                     <div>
-                        <h4>Ik ben:</h4>
+                        <h4> <i class="fa fa-list-alt" aria-hidden="true"></i> Ik ben:</h4>
                         <p> Marcel </p>
                     </div>
-
+                    <div class="row vrienden">
+                        <div class="col-md-12">
+                            <h4> De vrienden van {{username}}: (15) </h4>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4 vriend">
+                            <img src="images/vrienden/1.png">
+                            <h5> Jef </h5>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4 vriend">
+                            <img src="images/vrienden/2.png">
+                            <h5> Robin </h5>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4 vriend">
+                            <img src="images/vrienden/3.png">
+                            <h5> Sofie </h5>
+                        </div>
+                        <button class="btn btn-warning" type="button"> Meer tonen </button>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-xs-12 col-md-12 col-lg-8">
 
                 <div class="strip-items row">
                     <h1> De stripmuur van {{username}}</h1>
