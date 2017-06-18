@@ -234,7 +234,7 @@ body {
     }
   }
   .row {
-    .about-img {
+    .about-img, .box-img, .birthday-img, .school-img, .extra-img  {
       height: 500px;
     }
     .box-img {
@@ -243,7 +243,8 @@ body {
     #box {
       height: auto;
       text-align: center;
-      .about-p, .opmaat-p{
+      .about-p,
+      .opmaat-p {
         width: 80%;
       }
     }
