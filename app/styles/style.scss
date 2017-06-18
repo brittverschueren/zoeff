@@ -358,11 +358,6 @@
                         &.label-text {
                             display: block;
                         }
-                        .quiz-text {
-                            width: 30%;
-                            padding: 30px;
-                            display: inline;
-                        }
                     }
                     .answer-image {
                         width: 30%;
@@ -532,76 +527,73 @@
                     }
                 }
             }
-        }
-
-        .forum {
-            width: 100%;
-            .row {
-                #filters {
-                    width: 99%;
-                    margin: auto;
-                }
-                .form-post {
-                    padding: 50px 0;
-                }
-                .forum-filter {
-                    width: 30%;
-                }
-            }
-        }
-
-        .post {
-            text-align: center;
-        }
-
-        .quiz-blok {
-            background: white;
-            padding: 20px;
-            h1 {
-                font-size: 2.5em;
-            }
-            .quiz-button {
-                button {
-                    width: 100%;
-                }
-            }
-            .question {
-                h3 {
-                    font-size: 2em;
-                }
-                .answer {
-                    display: inline;
-                    label>input:checked+img {
-                        /* (RADIO CHECKED) IMAGE STYLES */
-                        box-shadow: 0 3px 10px rgba(0, 0, 0, .35);
-                        padding: 0px;
+            .forum {
+                width: 100%;
+                .row {
+                    #filters {
+                        width: 99%;
+                        margin: auto;
                     }
-                    .answer-image {
-                        width: 20%;
-                        padding: 5px;
+                    .form-post {
+                        padding: 50px 0;
                     }
-                    label {
-                        .quiz-text {
-                            display: block;
-                            width: 40%;
-                            margin: auto;
+                    .forum-filter {
+                        width: 30%;
+                    }
+                }
+            }
+            .post {
+                text-align: center;
+            }
+            .quiz-blok {
+                background: white;
+                padding: 20px;
+                h1 {
+                    font-size: 2.5em;
+                }
+                .quiz-button {
+                    button {
+                        width: 100%;
+                    }
+                }
+                .question {
+                    h3 {
+                        font-size: 2em;
+                    }
+                    .answer {
+                        display: inline;
+                        label>input:checked+img {
+                            /* (RADIO CHECKED) IMAGE STYLES */
+                            box-shadow: 0 3px 10px rgba(0, 0, 0, .35);
+                            padding: 0px;
+                        }
+                        .answer-image {
+                            width: 20%;
                             padding: 5px;
+                        }
+                        label {
+                            .quiz-image {
+                                display: block;
+                                width: 50%;
+                                margin: auto;
+                                padding: 5px;
+                            }
                         }
                     }
                 }
-            }
-            .results {
-                padding: 0;
-                width: 100%;
-                .result-image {
-                    width: 50%
-                }
-                .card {
+                .results {
+                    padding: 0;
                     width: 100%;
-                    margin: 5% 0;
-                    .card-block {
-                        .notmobile {
-                            display: none;
+                    .result-image {
+                        width: 50%
+                    }
+                    .card {
+                        width: 100%;
+                        margin: 5% 0;
+                        .card-block {
+                            .notmobile {
+                                display: none;
+                            }
                         }
                     }
                 }

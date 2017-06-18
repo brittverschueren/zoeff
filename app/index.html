@@ -110,7 +110,7 @@
                                     </label>
                                     <label class="image-label">
                             <input v-if="question.type==='image'" type="radio" v-bind:name="question.text" v-bind:value="answer.value" required>
-                            <img v-if="question.type==='image'" v-bind:src="answer.url" alt="" v-bind:class="question.style" class="answer-image">
+                            <img v-if="question.type==='image'" v-bind:src="answer.url" alt="" class="answer-image quiz-image">
                             </label>
                                 </div>
                             </div>
